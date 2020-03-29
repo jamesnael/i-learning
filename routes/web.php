@@ -17,6 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::get('auth', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('auth', 'Auth\LoginController@login')->name('sign-in');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware'=>'auth'],function(){
+	//Logout
+	Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+
+	//Teacher
+	Route::group(['prefix' => 'teacher', 'namespace' => 'teacher'],function(){
+		//Dashboard
+		Route::get('/dashboard', 'DashboardController@index')->name('teacher');
+	});
+});
+
