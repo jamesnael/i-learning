@@ -15,12 +15,12 @@ class CreateTbContactTable extends Migration
     {
         Schema::create('tb_contact', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('nama');
             $table->string('email');
             $table->string('phone');
             $table->string('subject');
             $table->text('message');
+            $table->timestamps();
         });
     }
 
