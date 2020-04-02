@@ -68,31 +68,28 @@ var DatatableRemoteAjax = function() {
                 },
                 {
                     "render": function(data, type, row) {
-                        return row[5];
+                        return row[4];
                     },
                     "visible": true
                 },
                 {
                     "render": function(data, type, row) {
-                        return row[6];
-                    },
-                    "visible": true
-                },
-                {
-                    "render": function(data, type, row) {
-                        return row[7];
-                    },
-                    "visible": true
-                },
-                {
-                    "render": function(data, type, row) {
-                        var status = row[11];
-                        if(status == 1) {
-                            var result = '<span class="m-badge m-badge--success m-badge--wide">Actived</span>';
-                        } else {
-                            var result = '<span class="m-badge m-badge--danger m-badge--wide">Not Actived</span>';
+                        if (row[5] == 'X')
+                        {
+                            return 'X (Sepuluh)';
                         }
-                        return result;
+                        else if(row[5] == 'XI') {
+                            return 'XI (Sebelas)';
+                        }
+                        else if(row[5] == 'XI') {
+                            return 'XII (Dua belas)';
+                        }
+                    },
+                    "visible": true
+                },
+                {
+                    "render": function(data, type, row) {
+                        return formattedDateddMMyyyy(row[7]);
                     },
                     "visible": true
                 },

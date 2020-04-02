@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>i-Learning | Teacher</title>
+        <title>i-Learning | Administrator</title>
 	    <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="description" content="Latest updates and statistic charts"> 
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
@@ -34,11 +34,11 @@
         
     	<!-- begin:: Page -->
 		<div class="m-grid m-grid--hor m-grid--root m-page">
-		@include('teachers.template.topbar')
+		@include('admin.template.topbar')
 			
 			<!-- begin::Body -->
 			<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
-			@include('teachers.template.aside')
+			@include('admin.template.aside')
 			   	<div class="m-grid__item m-grid__item--fluid m-wrapper">
 					<!-- BEGIN: Subheader -->
 					<div class="m-subheader ">
@@ -87,7 +87,7 @@
 
 				</div>
 			</div>
-			@include('teachers.template.footer')
+			@include('admin.template.footer')
 			<!-- end:: Body -->
 		</div>
 		<!-- end:: Page -->
