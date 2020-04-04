@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\Teacher;
-
+namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -14,7 +14,14 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('teachers.dashboard.index');
+        $userRole = Auth::user()->role;
+
+        if ($userRole == "admin") {
+            return view('admin.dashboard.index');
+        }elseif ($userRole == "teacher"){
+            return view('teachers.dashboard.index');
+        }
+        // return view('teachers.dashboard.index');
     }
 
     /**

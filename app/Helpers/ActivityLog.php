@@ -36,7 +36,7 @@ function createLog($data_new, $data_old, $data_change, $message, $activity, $id_
 {
     date_default_timezone_set('asia/jakarta');
     /* Get user by login */
-    $role      = Auth::user()->roles;
+    $role      = Auth::user()->role;
     $full_name = Auth::user()->name;
 
     /* Clean activity */

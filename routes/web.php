@@ -27,10 +27,30 @@ Route::group(['middleware'=>'auth'],function(){
 	//Logout
 	Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
+	//Dashboard
+	Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+	
 	//Teacher
 	Route::group(['prefix' => 'teacher', 'namespace' => 'teacher'],function(){
-		//Dashboard
-		Route::get('/dashboard', 'DashboardController@index')->name('teacher');
+		//Materi
+		Route::group(['prefix' => 'materi', 'as' => 'materi'],function(){
+			Route::get('/', 'MateriController@index')->name('');
+			Route::get('/create', 'MateriController@create')->name('-add');
+			Route::post('/save', 'MateriController@store')->name('-store');
+			Route::get('/loadTable', 'MateriController@loadTable')->name('-data');
+			Route::delete('/delete/', 'MateriController@destroy')->name('-delete');
+			Route::get('/edit/{id}', 'MateriController@edit')->name('-edit');
+			Route::put('/update/{id}', 'MateriController@update')->name('-update');
+			Route::get('/detail/{id}', 'MateriController@detail')->name('-detail');
+		});
+	});
+	Route::group(['prefix' => 'admin', 'namespace' => 'admin'],function(){
+		//Activity log
+		Route::group(['prefix'=>'activity-log'],function(){
+			Route::get('/', 'ActivityLogController@index')->name('activity-log');
+			Route::get('/view/{id}', 'ActivityLogController@view')->name('view_activity-log');
+			Route::get('/view/{menu_name}/detail/{id}', 'ActivityLogController@detail')->name('detail_activity-log');
+		});
 	});
 	
 });

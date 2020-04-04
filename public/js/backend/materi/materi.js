@@ -112,50 +112,8 @@ function limitCharacter(event)
     }
 }
 
-// Number format form add
-var normal_price = document.getElementById('normal_price');
-var early_price = document.getElementById('early_bird_price');
-
-
-normal_price.addEventListener('keyup', function(e)
-{
-    normal_price.value = formatRupiahType(this.value);
-});
-
-normal_price.addEventListener('keydown', function(event)
-{
-    limitCharacter(event);
-});
-
-early_price.addEventListener('keyup', function(e)
-{
-    early_price.value = formatRupiahType(this.value);
-});
-
-early_price.addEventListener('keydown', function(event)
-{
-    limitCharacter(event);
-});
-
-jQuery(document).ready(function() {
-    $("#start_date").datepicker({
-        todayBtn:  1,
-        autoclose: true,
-        format :'dd MM yyyy',
-        clearBtn: true,
-    });
-
-    $("#end_date").datepicker({
-        todayBtn:  1,
-        autoclose: true,
-        format :'dd MM yyyy',
-        clearBtn: true,
-    });
-
-    $("#early_bird_expired_date").datepicker({
-        todayBtn:  1,
-        autoclose: true,
-        format :'dd MM yyyy',
-        clearBtn: true,
+$(document).ready(function() {
+    $('#content').summernote({
+        height: 150,
     });
 });

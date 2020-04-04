@@ -45,7 +45,7 @@
                             </div>
                             <div class="m-login__signin">
                                 <div class="m-login__head">
-                                    <h3 class="m-login__title">Sign In To Teacher</h3>
+                                    <h3 class="m-login__title">Sign In To i-Learning System</h3>
                                 </div>
                                 <form class="m-login__form m-form" method="POST" action="">
                                     {{ csrf_field() }}
