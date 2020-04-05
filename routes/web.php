@@ -17,11 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Auth::routes();
 Route::get('auth', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('auth', 'Auth\LoginController@login')->name('sign-in');
+Route::post('register', 'Auth\RegisterController@register')->name('register');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-
-
 
 Route::group(['middleware'=>'auth'],function(){
 	//Logout
@@ -53,7 +53,7 @@ Route::group(['middleware'=>'auth'],function(){
 		});
 	});
 	Route::group(['prefix' => 'student', 'namespace' => 'student'], function(){
-		Route::get('/','StudentController@index')->name('');
+		// Route::get('/','StudentController@index')->name('');
 	});
 	
 });

@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>i-Learning | Teacher</title>
+        <title>i-Learning | Students</title>
 	    <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="description" content="Latest updates and statistic charts"> 
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
@@ -38,7 +38,6 @@
 			
 			<!-- begin::Body -->
 			<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
-			@include('students.template.aside')
 			   	<div class="m-grid__item m-grid__item--fluid m-wrapper">
 					<!-- BEGIN: Subheader -->
 					<div class="m-subheader ">
@@ -46,7 +45,7 @@
 					 		<div class="mr-auto">
 					 			<ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
 		                            <li class="m-nav__item m-nav__item--home">
-		                                <a href="{{ route('teacher') }}" class="m-nav__link m-nav__link--icon">
+		                                <a href="{{ route('dashboard') }}" class="m-nav__link m-nav__link--icon">
 		                                    <i class="m-nav__link-icon la la-home"></i>
 		                                </a>
 		                            </li>
