@@ -6,7 +6,7 @@
 			<div class="m-stack__item m-brand  m-brand--skin-light ">
 				<div class="m-stack m-stack--ver m-stack--general m-stack--fluid">
 					<div class="m-stack__item m-stack__item--middle m-brand__logo">
-						<a href="{{ route('teacher') }}" class="m-brand__logo-wrapper" style="color:white">
+						<a href="{{ route('dashboard') }}" class="m-brand__logo-wrapper" style="color:white">
 							<img alt="" width="110" src="{{ asset('images/logo-white.png') }}" class="mb-1" />
 							<!-- <h5>Event Registration</h5> -->
 						</a>  
@@ -31,8 +31,19 @@
 			<div class="m-stack__item m-stack__item--fluid m-header-head" id="m_header_nav">
 				<!-- BEGIN: Topbar -->
 				<div id="m_header_topbar" class="m-topbar m-stack m-stack--ver m-stack--general">
-
 					<div class="m-stack__item m-topbar__nav-wrapper">
+						<ul class="m-topbar__nav m-nav m-nav--inline">
+							<li class="m-nav__item m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center m-dropdown--mobile-full-width m-dropdown--skin-light	m-list-search m-list-search--skin-light" >
+								<a href="#" class="m-nav__link m-dropdown__toggle">
+									<span class="m-nav__link-icon"><span class="m-nav__link-icon-wrapper">Materi</span></span>
+								</a>
+							</li>
+							<li class="m-nav__item m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center m-dropdown--mobile-full-width m-dropdown--skin-light	m-list-search m-list-search--skin-light" >
+								<a href="#" class="m-nav__link m-dropdown__toggle">
+									<span class="m-nav__link-icon"><span class="m-nav__link-icon-wrapper">Tugas Siswa</span></span>
+								</a>
+							</li>
+						</ul>
 						<ul class="m-topbar__nav m-nav m-nav--inline">
 							<li class="m-nav__item m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center m-dropdown--mobile-full-width m-dropdown--skin-light	m-list-search m-list-search--skin-light" m-dropdown-toggle="click" id="m_quicksearch" m-quicksearch-mode="dropdown" m-dropdown-persistent="1">
 							<a href="#" class="m-nav__link m-dropdown__toggle">
