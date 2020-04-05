@@ -34,11 +34,11 @@
         
     	<!-- begin:: Page -->
 		<div class="m-grid m-grid--hor m-grid--root m-page">
-		@include('teachers.template.topbar')
+		@include('students.template.topbar')
 			
 			<!-- begin::Body -->
 			<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
-			@include('teachers.template.aside')
+			@include('students.template.aside')
 			   	<div class="m-grid__item m-grid__item--fluid m-wrapper">
 					<!-- BEGIN: Subheader -->
 					<div class="m-subheader ">
@@ -87,7 +87,7 @@
 
 				</div>
 			</div>
-			@include('teachers.template.footer')
+			@include('students.template.footer')
 			<!-- end:: Body -->
 		</div>
 		<!-- end:: Page -->

@@ -31,5 +31,14 @@ class UsersTableSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
         ]);
+        User::create([
+            'nip' => '11706070',
+            'name' => 'Students',
+            'address' => '-',
+            'email' => 'student@student.com',
+            'role' => 'student',
+            'email_verified_at' => now(),
+            'password' => Hash::make('password'),
+        ]);
     }
 }

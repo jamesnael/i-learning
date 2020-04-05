@@ -20,6 +20,8 @@ class DashboardController extends Controller
             return view('admin.dashboard.index');
         }elseif ($userRole == "teacher"){
             return view('teachers.dashboard.index');
+        }elseif ($userRole == "student"){
+            return view('students.dashboard.index');
         }
         // return view('teachers.dashboard.index');
     }

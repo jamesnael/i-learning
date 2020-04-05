@@ -52,6 +52,9 @@ Route::group(['middleware'=>'auth'],function(){
 			Route::get('/view/{menu_name}/detail/{id}', 'ActivityLogController@detail')->name('detail_activity-log');
 		});
 	});
+	Route::group(['prefix' => 'student', 'namespace' => 'student'], function(){
+		Route::get('/','StudentController@index')->name('');
+	});
 	
 });
 
