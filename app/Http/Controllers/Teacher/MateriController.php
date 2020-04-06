@@ -109,7 +109,16 @@ class MateriController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Materi::findOrFail($id);
+        return view('backend.event.edit')->with([
+            'page'  => $this,
+            'data'  => $data,
+
+            $this->breadcrumbs = [
+                ['url' => '../', 'title' =>'Materi'],
+                ['url' => '', 'title' =>'Edit'],
+            ],
+        ]);
     }
 
     /**
@@ -121,7 +130,53 @@ class MateriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB::beginTransaction();
+        try 
+        {
+            $data = Materi::findOrfail($id);
+
+            /* Array Log */
+            $data_old = array(
+                "Judul Materi"       => $data->judul_materi,
+                "Mapel Materi"       => $data->materi_mapel,
+                "Materi Untuk Kelas" => $data->materi_kelas,
+                "Isi Materi"         => $data->isi_materi,
+            );
+            /* End array log */
+
+            $data->judul_materi = $request->judul_materi;
+            $data->materi_url   = slug($request->judul_materi);
+            $data->materi_mapel = $request->materi_mapel;
+            $data->materi_kelas = $request->materi_kelas;
+            $data->isi_materi   = $request->isi_materi;
+
+            /* Array Log */
+            $data_new = array(
+                "Judul Materi"       => $request->judul_materi,
+                "Mapel Materi"       => $request->materi_mapel,
+                "Materi Untuk Kelas" => $request->materi_kelas,
+                "Isi Materi"         => $request->isi_materi,
+            );
+            /* End Array Log */
+
+            $data->save();
+            DB::commit();
+
+            /* Write Log */
+            $data_change = array_diff_assoc($data_new, $data_old);
+            $message     = 'Success to update materi with materi title ' . $request->judul_materi;
+            createLog(json_encode($data_new), json_encode($data_old), json_encode($data_change), $message, 'Update', '', 'Materi');
+            /* End Write Log */
+
+            return redirect()->route('materi')->with('alert','Success!')->with('message','Success update materi '.$request->event_title);
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()
+                ->withInput($request->except(['_token']))
+                ->with('alert', 'Error')
+                ->with('message', 'Failed update data event. '.$e->getMessage().' on file '.$e->getFile().' on line '.$e->getLine());
+        }
     }
 
     /**
