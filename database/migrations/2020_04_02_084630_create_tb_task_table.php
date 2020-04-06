@@ -20,7 +20,7 @@ class CreateTbTaskTable extends Migration
             $table->string('tugas_mapel');
             $table->string('tugas_kelas');
             $table->text('isi_tugas');
-            $table->datetime('dateline_tugas');
+            $table->datetime('deadline_tugas');
             $table->text('file_tugas');
             $table->integer('teacher_id');
             $table->timestamps();

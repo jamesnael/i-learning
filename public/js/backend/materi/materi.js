@@ -49,16 +49,16 @@ function ValidateSingleInputCover(oInput) {
 $('.save').click(function(event) {
     $('#form_add').validate({ // initialize the plugin
         rules: {
-            page_name: {
+            judul_materi: {
                 required: true
             },
-            banner_name: {
+            materi_mapel: {
                 required: true
             },
-            // banner_link_url: {
-            //     required: true
-            // },
-            banner_image: {
+            materi_kelas: {
+                required: true
+            },
+            isi_materi: {
                 required: true,
             }
         },

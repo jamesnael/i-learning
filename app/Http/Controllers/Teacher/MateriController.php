@@ -110,7 +110,7 @@ class MateriController extends Controller
     public function edit($id)
     {
         $data = Materi::findOrFail($id);
-        return view('backend.event.edit')->with([
+        return view('teachers.materi.edit')->with([
             'page'  => $this,
             'data'  => $data,
 
@@ -175,7 +175,7 @@ class MateriController extends Controller
             return redirect()->back()
                 ->withInput($request->except(['_token']))
                 ->with('alert', 'Error')
-                ->with('message', 'Failed update data event. '.$e->getMessage().' on file '.$e->getFile().' on line '.$e->getLine());
+                ->with('message', 'Failed update materi. '.$e->getMessage().' on file '.$e->getFile().' on line '.$e->getLine());
         }
     }
 

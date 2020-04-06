@@ -12,7 +12,7 @@ class Tugas extends Model
     protected $table = 'tb_task';
 
     protected $fillable = [
-        'judul_tugas', 'tugas_url', 'tugas_mapel', 'tugas_kelas', 'isi_tugas','dateline_tugas','file_tugas'
+        'judul_tugas', 'tugas_url', 'tugas_mapel', 'tugas_kelas', 'isi_tugas','deadline_tugas','file_tugas'
     ];
 
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];

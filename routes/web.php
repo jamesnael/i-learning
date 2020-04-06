@@ -44,6 +44,18 @@ Route::group(['middleware'=>'auth'],function(){
 			Route::get('/detail/{id}', 'MateriController@detail')->name('-detail');
 		});
 
+		//Tugas
+		Route::group(['prefix' => 'tugas', 'as' => 'tugas'],function(){
+			Route::get('/', 'TugasController@index')->name('');
+			Route::get('/create', 'TugasController@create')->name('-add');
+			Route::post('/save', 'TugasController@store')->name('-store');
+			Route::get('/loadTable', 'TugasController@loadTable')->name('-data');
+			Route::delete('/delete/', 'TugasController@destroy')->name('-delete');
+			Route::get('/edit/{id}', 'TugasController@edit')->name('-edit');
+			Route::put('/update/{id}', 'TugasController@update')->name('-update');
+			Route::get('/detail/{id}', 'TugasController@detail')->name('-detail');
+		});
+
 		//Teacher Profile
 		Route::group(['prefix'=>'user-profile'],function(){
 			Route::get('/', 'ProfileController@index')->name('teacher-profile');
@@ -71,7 +83,7 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::group(['prefix' => 'student', 'namespace' => 'student'], function(){
 		//Tugas
 		Route::get('/','TugasController@index')->name('/');
-		
+
 		//Student Profile
 		Route::group(['prefix'=>'user-profile'],function(){
 			Route::get('/', 'ProfileController@index')->name('student-profile');

@@ -46,20 +46,62 @@ function ValidateSingleInputCover(oInput) {
     return true;
 }
 
+var _validFileExtensions2 = [".pdf", ".doc", ".docx"];
+function ValidateSingleInputFile(oInput) {
+    if (oInput.type == "file") {
+        console.log(oInput);
+        var sFileName = oInput.value;
+        if (typeof (oInput.files) != "undefined") {
+            var size = parseFloat(oInput.files[0].size / 1024).toFixed(2);
+            if (size > 5000) {
+                $("#file_upload").val('');
+                toastr.error("Size exceeds limit!", "Notifications");
+                oInput.value = "";
+                return false;
+            }else{
+              if (sFileName.length > 0) {
+                  var blnValid = false;
+                  for (var j = 0; j < _validFileExtensions2.length; j++) {
+                      var sCurExtension2 = _validFileExtensions2[j];
+                      if (sFileName.substr(sFileName.length - sCurExtension2.length, sCurExtension2.length).toLowerCase() == sCurExtension2.toLowerCase()) {
+                          blnValid = true;
+                          $('#detailFile').html(sFileName);
+                          break;
+                      }
+                  }
+
+                  if (!blnValid) {
+                      $("#file_upload").val('');
+                      toastr.error("Format is not suitable!", "Notifications");
+                      oInput.value = "";
+                      return false;
+                  }
+              }
+            }
+        } else {
+            toastr.error("The browser does not support this feature!", "Notifications");
+        }
+    }
+    return true;
+}
+
 $('.save').click(function(event) {
     $('#form_add').validate({ // initialize the plugin
         rules: {
-            page_name: {
+            judul_tugas: {
                 required: true
             },
-            banner_name: {
+            tugas_mapel: {
                 required: true
             },
-            // banner_link_url: {
-            //     required: true
-            // },
-            banner_image: {
+            tugas_kelas: {
+                required: true
+            },
+            isi_tugas: {
                 required: true,
+            },
+            deadline_tugas: {
+                required: true
             }
         },
         highlight: function(element) {
@@ -112,33 +154,8 @@ function limitCharacter(event)
     }
 }
 
-// Number format form add
-var normal_price = document.getElementById('normal_price');
-var early_price = document.getElementById('early_bird_price');
-
-
-normal_price.addEventListener('keyup', function(e)
-{
-    normal_price.value = formatRupiahType(this.value);
-});
-
-normal_price.addEventListener('keydown', function(event)
-{
-    limitCharacter(event);
-});
-
-early_price.addEventListener('keyup', function(e)
-{
-    early_price.value = formatRupiahType(this.value);
-});
-
-early_price.addEventListener('keydown', function(event)
-{
-    limitCharacter(event);
-});
-
 jQuery(document).ready(function() {
-    $("#start_date").datepicker({
+    $("#deadline_tugas").datepicker({
         todayBtn:  1,
         autoclose: true,
         format :'dd MM yyyy',
