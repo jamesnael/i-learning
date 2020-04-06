@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Student;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +19,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('admin.user-profile.index')->with([
+        return view('teachers.user-profile.index')->with([
             'page'      => $this,
             
             $this->breadcrumbs = [

@@ -69,8 +69,16 @@ Route::group(['middleware'=>'auth'],function(){
 		});
 	});
 	Route::group(['prefix' => 'student', 'namespace' => 'student'], function(){
-		// Route::get('/','StudentController@index')->name('');
+		//Tugas
 		Route::get('/','TugasController@index')->name('/');
+		
+		//Student Profile
+		Route::group(['prefix'=>'user-profile'],function(){
+			Route::get('/', 'ProfileController@index')->name('student-profile');
+			Route::post('/changePicture', 'ProfileController@change_profile_picture')->name('student-change-picture');
+			Route::post('/changeInformation', 'ProfileController@change_profile_information')->name('student-change-information');
+			Route::post('/changePassword', 'ProfileController@update_password')->name('student-change-password');
+		});
 	});
 	
 });

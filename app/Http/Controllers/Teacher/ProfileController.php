@@ -58,9 +58,9 @@ class ProfileController extends Controller
                     {   
                         $destinationPath = public_path('images/user_photo/');
                         
-                        if(file_exists($destinationPath . $data->profile_image_file_name))
+                        if(file_exists($destinationPath . $data->photo))
                         {
-                            unlink($destinationPath . $data->profile_image_file_name);
+                            unlink($destinationPath . $data->photo);
 
                             $input                         = $request->file('profile_photo');
                             $fileName                      = time().'.'.$input->getClientOriginalExtension(); // original name that it was uploaded with
@@ -73,7 +73,7 @@ class ProfileController extends Controller
 
                         $uploadfile = $input->move($destinationPath,$fileName); // moving the file to specified dir with the original name
                         
-                        $data->profile_image_file_name = $fileName;
+                        $data->photo = $fileName;
                         
                         $data->save();
 
