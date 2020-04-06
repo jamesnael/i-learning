@@ -21,6 +21,7 @@
 
         <!--begin::Css -->
         <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" /> 
+		<link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link href="{{ asset('assets/vendors/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet" type="text/css" />
    		<link href="{{ asset('assets/vendors/base/vendors.bundle.css') }}" rel="stylesheet" type="text/css" />
 		<link href="{{ asset('assets/demo/demo11/base/style.bundle.css') }}" rel="stylesheet" type="text/css" />

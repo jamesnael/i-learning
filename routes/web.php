@@ -54,6 +54,7 @@ Route::group(['middleware'=>'auth'],function(){
 	});
 	Route::group(['prefix' => 'student', 'namespace' => 'student'], function(){
 		// Route::get('/','StudentController@index')->name('');
+		Route::get('/','TugasController@index')->name('/');
 	});
 	
 });

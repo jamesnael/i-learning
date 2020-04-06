@@ -10,16 +10,10 @@
 					        <h3 class="m-widget24__title">
 					    		Invers Matriks
 							</h3>
-<<<<<<< HEAD
-<<<<<<< HEAD
-							
 							<br>
 							<br>
 							<br>
 					        <div class="m--space-10"></div>
-=======
-=======
->>>>>>> 8868e946956602608281e2fb4729d379fb1436b0
 							<div class="container">
 								<div id="carouselExampleControls" class="carousel slide w-50" data-ride="carousel">
 								  	<div class="carousel-inner">
@@ -40,11 +34,8 @@
 									</a>
 								</div>
 							</div>
-					        <div class="m--space-10 my-5"></div>
-<<<<<<< HEAD
->>>>>>> 8868e946956602608281e2fb4729d379fb1436b0
-=======
->>>>>>> 8868e946956602608281e2fb4729d379fb1436b0
+							
+					    <div class="m--space-10 my-5"></div>
 							<span class="m-widget24__desc">
 					            Latihan Matematika Kelas 12
 					        </span><br>

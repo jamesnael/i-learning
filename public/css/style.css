@@ -1,0 +1,57 @@
+body {
+    background-color: #f5f5f5;
+    /* overflow-x: hidden; */
+}
+
+.navbar {
+    position: absolute;
+    background: transparent;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex > a {
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    margin: 0 4px;
+    transition: .2s;
+    text-decoration: none;
+}
+
+.flex > a:hover {
+    background-color: rgba(0, 0, 0, .15);
+}
+
+.header {
+    background: linear-gradient(90deg, rgba(242, 70, 69, 1), rgba(235, 192, 141, 0.867)), url("../img/background.JPG");
+    background-size: cover;
+    background-position: center;
+    padding: 250px 0;
+    position: relative;
+    z-index: -10;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-muted {
+    color: #00000089;
+}
+
+main {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, .15);
+    margin: -64px 64px 64px 64px;
+    padding: 64px 0 64px 0;
+}
+
+footer {
+    padding: 20px 0;
+}
