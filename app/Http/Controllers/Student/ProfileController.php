@@ -19,7 +19,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('teachers.user-profile.index')->with([
+        return view('students.user-profile.index')->with([
             'page'      => $this,
             
             $this->breadcrumbs = [
@@ -60,8 +60,7 @@ class ProfileController extends Controller
                         
                         if(file_exists($destinationPath . $data->photo))
                         {
-                            unlink($destinationPath . $data->photo);
-
+                            // unlink($destinationPath . $data->photo);
                             $input                         = $request->file('profile_photo');
                             $fileName                      = time().'.'.$input->getClientOriginalExtension(); // original name that it was uploaded with
                         }
@@ -89,7 +88,7 @@ class ProfileController extends Controller
                 catch (\Exception $e) {
                     DB::rollBack();
 
-                    $status = array('status' => 'error', 'messages' => 'Failed To Change Profile Photo');
+                    $status = array('status' => 'error', 'messages' => 'Failed To Change Profile Photo'.$e);
                 }
             }
             else

@@ -171,9 +171,9 @@ $('.save').click(function(event) {
                 else
                 {
                     toastr.error(data.messages);
-                    setTimeout(function() {
-                        window.location.reload();
-                    }, 2000);
+                    // setTimeout(function() {
+                    //     window.location.reload();
+                    // }, 2000);
                 }
             }
         })

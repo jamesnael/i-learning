@@ -60,7 +60,7 @@ class ProfileController extends Controller
                         
                         if(file_exists($destinationPath . $data->photo))
                         {
-                            unlink($destinationPath . $data->photo);
+                            // unlink($destinationPath . $data->photo);
 
                             $input                         = $request->file('profile_photo');
                             $fileName                      = time().'.'.$input->getClientOriginalExtension(); // original name that it was uploaded with

@@ -1,4 +1,4 @@
-@extends('student.template.master') 
+@extends('students.template.master') 
 @section('content')
 <style type="text/css">
     .custom-file-upload{
@@ -18,21 +18,19 @@
                         Profile Photo
                     </div>
                     <form id="form-photo" role="form" action="{{ route('student-change-picture') }}" enctype="multipart/form-data">
-                        <!-- Csrf Field -->
                         @csrf
-                        <!-- Csrf Field -->
                         <div class="m-card-profile__pic">
                             <div class="m-card-profile__pic-wrapper">
                                 <input type="file" name="profile_photo" id="profile_photo" class="custom-file-upload" style="height: 150px; width: 150px;">
                                 <img id="profilePreview" src="{{ !empty(Auth::user()->photo) ? asset('images/user_photo/' . Auth::user()->photo ) : asset('assets/no_image.png')}}" alt="" />
                             </div>
                         </div>
-                        <span><b class="text-danger">*</b> Click image above to change profile photo</span>
-                        <div class="m-card-profile__details mt-5">
-                            <span class="m-card-profile__name">{{ Auth::user()->name }}</span>
-                            <span class="m-card-profile__email">{{ Auth::user()->email }}</span>
-                        </div>
                         <center>
+                            <span><b class="text-danger">*</b> Click image above to change profile photo</span>
+                            <div class="m-card-profile__details mt-5">
+                                <span class="m-card-profile__name">{{ Auth::user()->name }}</span>
+                                <span class="m-card-profile__email">{{ Auth::user()->email }}</span>
+                            </div>
                             <button type="button" class="btn btn-primary change-pict mt-4" disabled>Save Picture</button>
                         </center>
                     </form>
