@@ -9,23 +9,23 @@
 					<div class="m-widget24">					 
 					    <div class="m-widget24__item">
 					        <h4 class="m-widget24__title">
-					            Total Profit
+					            Total Students
 					        </h4><br>
 					        <span class="m-widget24__desc">
-					            All Customs Value
+					            All Students
 					        </span>
 					        <span class="m-widget24__stats m--font-brand">
-					            $18M 
+					            {{ $total_student }}
 					        </span>		
 					        <div class="m--space-10"></div>
 							<div class="progress m-progress--sm">
-								<div class="progress-bar m--bg-brand" role="progressbar" style="width: 78%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+								<div class="progress-bar m--bg-brand" role="progressbar" style="width: {{ $total_student }}%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 							</div>
 							<span class="m-widget24__change">
-								Change
+								Percentage
 							</span>
 							<span class="m-widget24__number">
-								78%
+								{{ $total_student }}%
 						    </span>
 					    </div>				      
 					</div>
@@ -36,23 +36,23 @@
 					<div class="m-widget24">
 						 <div class="m-widget24__item">
 					        <h4 class="m-widget24__title">
-					            New Feedbacks
+					            Total Teachers
 					        </h4><br>
 					        <span class="m-widget24__desc">
-					            Customer Review
+					            All Teachers
 					        </span>
 					        <span class="m-widget24__stats m--font-info">
-					            1349
+					            {{ $total_teacher }}
 					        </span>		
 					        <div class="m--space-10"></div>
 							<div class="progress m-progress--sm">
-								<div class="progress-bar m--bg-info" role="progressbar" style="width: 84%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+								<div class="progress-bar m--bg-info" role="progressbar" style="width: {{ $total_teacher }}%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 							</div>
 							<span class="m-widget24__change">
-								Change
+								Percentage
 							</span>
 							<span class="m-widget24__number">
-								84%
+								{{ $total_teacher }}%
 						    </span>
 					    </div>		
 					</div>
@@ -63,23 +63,23 @@
 					<div class="m-widget24">
 						<div class="m-widget24__item">
 					        <h4 class="m-widget24__title">
-					            New Orders
+					            Total Learning
 					        </h4><br>
 					        <span class="m-widget24__desc">
-					            Fresh Order Amount
+					            All Learnings
 					        </span>
 					        <span class="m-widget24__stats m--font-danger">
-					            567
+					            {{ $total_learning }}
 					        </span>		
 					        <div class="m--space-10"></div>
 							<div class="progress m-progress--sm">
-								<div class="progress-bar m--bg-danger" role="progressbar" style="width: 69%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+								<div class="progress-bar m--bg-danger" role="progressbar" style="width: {{ $total_learning }}%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 							</div>
 							<span class="m-widget24__change">
-								Change
+								Percentage
 							</span>
 							<span class="m-widget24__number">
-								69%
+								{{ $total_learning }}%
 				            </span>
 					    </div>		
 					</div>

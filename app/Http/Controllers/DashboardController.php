@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Materi;
+use App\Models\Tugas;
+use App\User;
 
 class DashboardController extends Controller
 {
@@ -14,10 +17,14 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        $total_student = User::where('role','student')->count();
+        $total_teacher = User::where('role','student')->count();
+        $total_learning = Materi::count();
+
         $userRole = Auth::user()->role;
 
         if ($userRole == "admin") {
-            return view('admin.dashboard.index');
+            return view('admin.dashboard.index',compact('total_student', 'total_teacher', 'total_learning'));
         }elseif ($userRole == "teacher"){
             return view('teachers.dashboard.index');
         }elseif ($userRole == "student"){

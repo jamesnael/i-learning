@@ -39,6 +39,7 @@ class UsersTableSeeder extends Seeder
             'address' => '-',
             'email' => 'student@student.com',
             'role' => 'student',
+            'kelas' => '12',
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
         ]);
