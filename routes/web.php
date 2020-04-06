@@ -43,6 +43,14 @@ Route::group(['middleware'=>'auth'],function(){
 			Route::put('/update/{id}', 'MateriController@update')->name('-update');
 			Route::get('/detail/{id}', 'MateriController@detail')->name('-detail');
 		});
+
+		//Teacher Profile
+		Route::group(['prefix'=>'user-profile'],function(){
+			Route::get('/', 'ProfileController@index')->name('teacher-profile');
+			Route::post('/changePicture', 'ProfileController@change_profile_picture')->name('teacher-change-picture');
+			Route::post('/changeInformation', 'ProfileController@change_profile_information')->name('teacher-change-information');
+			Route::post('/changePassword', 'ProfileController@update_password')->name('teacher-change-password');
+		});
 	});
 	Route::group(['prefix' => 'admin', 'namespace' => 'admin'],function(){
 		//Activity log
@@ -50,6 +58,14 @@ Route::group(['middleware'=>'auth'],function(){
 			Route::get('/', 'ActivityLogController@index')->name('activity-log');
 			Route::get('/view/{id}', 'ActivityLogController@view')->name('view_activity-log');
 			Route::get('/view/{menu_name}/detail/{id}', 'ActivityLogController@detail')->name('detail_activity-log');
+		});
+		
+		//Admin Profile
+		Route::group(['prefix'=>'user-profile'],function(){
+			Route::get('/', 'ProfileController@index')->name('admin-profile');
+			Route::post('/changePicture', 'ProfileController@change_profile_picture')->name('admin-change-picture');
+			Route::post('/changeInformation', 'ProfileController@change_profile_information')->name('admin-change-information');
+			Route::post('/changePassword', 'ProfileController@update_password')->name('admin-change-password');
 		});
 	});
 	Route::group(['prefix' => 'student', 'namespace' => 'student'], function(){

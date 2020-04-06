@@ -83,11 +83,13 @@ var SnippetLogin = function ()
 						},
 						password:
 						{
-							required: !0
+							required: !0,
+							minlength: 8
 						},
 						rpassword:
 						{
-							required: !0
+							required: !0,
+							minlength: 8
 						},
 						agree:
 						{
