@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-        <div class="m-portlet__body  m-portlet__body--no-padding">
+        <div class="m-portlet__body m-portlet__body--no-padding">
             <div class="row m-row--no-padding m-row--col-separator-xl">
                 <div class="container">
                     <div class="row mx-2 my-5">

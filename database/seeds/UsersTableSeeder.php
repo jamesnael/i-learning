@@ -19,6 +19,7 @@ class UsersTableSeeder extends Seeder
             'address' => '-',
             'email' => 'test@gmail.com',
             'role' => 'teacher',
+            'phone_number' => '+6281234566789',
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
         ]);
@@ -28,6 +29,7 @@ class UsersTableSeeder extends Seeder
             'address' => '-',
             'email' => 'admin@admin.com',
             'role' => 'admin',
+            'phone_number' => '+6281234566789',
             'gender' => 'L',
             'photo' => 'superadmin.png',
             'email_verified_at' => now(),
@@ -39,6 +41,7 @@ class UsersTableSeeder extends Seeder
             'address' => '-',
             'email' => 'student@student.com',
             'role' => 'student',
+            'phone_number' => '+6281234566789',
             'kelas' => '12',
             'email_verified_at' => now(),
             'password' => Hash::make('password'),

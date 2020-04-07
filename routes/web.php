@@ -79,6 +79,19 @@ Route::group(['middleware'=>'auth'],function(){
 			Route::post('/changeInformation', 'ProfileController@change_profile_information')->name('admin-change-information');
 			Route::post('/changePassword', 'ProfileController@update_password')->name('admin-change-password');
 		});
+
+		//Materi
+		Route::group(['prefix' => 'user', 'as' => 'user'],function(){
+			Route::get('/', 'UserController@index')->name('');
+			Route::get('/create', 'UserController@create')->name('-add');
+			Route::post('/save', 'UserController@store')->name('-store');
+			Route::get('/loadTable', 'UserController@loadTable')->name('-data');
+			Route::delete('/delete/', 'UserController@destroy')->name('-delete');
+			Route::get('/edit/{id}', 'UserController@edit')->name('-edit');
+			Route::put('/update/{id}', 'UserController@update')->name('-update');
+			Route::get('/detail/{id}', 'UserController@detail')->name('-detail');
+			Route::get('/check_email', 'UserController@check')->name('-check');
+		});
 	});
 	Route::group(['prefix' => 'student', 'namespace' => 'student'], function(){
 		//Tugas

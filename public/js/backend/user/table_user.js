@@ -62,50 +62,38 @@ var DatatableRemoteAjax = function() {
                 },
                 {
                     "render": function(data, type, row) {
-                        return row[3];
-                    },
-                    "visible": true,
-                    "width": '70px'
-                },
-                {
-                    "render": function(data, type, row) {
-                        return row[5];
-                    },
-                    "visible": true
-                },
-                {
-                    "render": function(data, type, row) {
                         return row[2];
                     },
                     "visible": true
                 },
                 {
                     "render": function(data, type, row) {
-                        return formattedDateddMMyyyy(row[4]);
+                        return row[3];
                     },
                     "visible": true
                 },
                 {
                     "render": function(data, type, row) {
-                        var status = row[18];
-                        if(status != null) {
-                            var result = '<a href="'+ file_location + '/' + row[18] +'" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="m-tooltip" title="Download" data-original-title="Download" target="_blank"><i class="fa fa-cloud-download-alt"></i></a>';
-                        } else {
-                            var result = '<button class="m-portlet__nav-link btn m-btn m-btn--hover-warning m-btn--icon m-btn--icon-only m-btn--pill" disabled="" title="File does not upload yet" style="margin-top: 0;"><i class="fa fa-cloud-download-alt"></i></button>';
-                        }
-                        return result;
+                        return row[4];
                     },
-                    "class": 'text-center',
-                    "width": '70px',
+                    "visible": true
+                },
+                {
+                    "render": function(data, type, row) {
+                        if(row[5] == "teacher"){
+                            return "Teacher";
+                        }else if(row[5] == "student"){
+                            return "Student";
+                        }
+                    },
                     "visible": true
                 },
                 {
                     "render": function(data, type, row) {
                         var id     = '<input type="hidden" id="id" value="' + row[1] + '">';
-                        var btnV   = '<button type="button" id="" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="modal" data-skin="dark" title="View" data-original-title="Detail" data-target="#Modal" data-id="'+ row[1] +'"><i class="fa fa-search"></i></button>'
                         var btnE   = '<a href="'+ edit_ + '/' + row[1] +'" data-toggle="m-tooltip" data-placement="top" data-container="body" class="m-portlet__nav-link btn m-btn m-btn--hover-warning m-btn--icon m-btn--icon-only m-btn--pill edit" title="Edit Data" style="margin-top: 0;"><i class="fa fa-edit"></i></a>';
-                        var btnP   = '<a href="'+ edit_ + '/' + row[1] +'" data-placement="top" data-container="body" class="m-portlet__nav-link btn m-btn m-btn--hover-danger m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="m-tooltip" data-skin="dark" title="" data-original-title="Pending Registrant" style="margin-top: 0;"><i class="fa fa-clock"></i></a>';
-                        var button = id  + '' + '' + btnV + '<br>' + btnE + '<br>' + btnP;
+                        var btnD   = '<a data-toggle="m-tooltip" data-placement="top" data-container="body" class="m-portlet__nav-link btn m-btn m-btn--hover-danger m-btn--icon m-btn--icon-only m-btn--pill delete" title="Delete Data" style="margin-top: 0;"><i class="fa fa-trash"></i></a>';
+                        var button = id  + '' + '' + btnE + '' + btnD;
                         return button;
                     },
                     "visible": true,
