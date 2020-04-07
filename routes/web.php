@@ -80,7 +80,7 @@ Route::group(['middleware'=>'auth'],function(){
 			Route::post('/changePassword', 'ProfileController@update_password')->name('admin-change-password');
 		});
 
-		//Materi
+		//Users
 		Route::group(['prefix' => 'user', 'as' => 'user'],function(){
 			Route::get('/', 'UserController@index')->name('');
 			Route::get('/create', 'UserController@create')->name('-add');
@@ -91,6 +91,14 @@ Route::group(['middleware'=>'auth'],function(){
 			Route::put('/update/{id}', 'UserController@update')->name('-update');
 			Route::get('/detail/{id}', 'UserController@detail')->name('-detail');
 			Route::get('/check_email', 'UserController@check')->name('-check');
+		});
+
+		//Contact
+		Route::group(['prefix' => 'contact', 'as' => 'contact'],function(){
+			Route::get('/', 'ContactController@index')->name('');
+			Route::get('/loadTable', 'ContactController@loadTable')->name('-data');
+			Route::get('/detail/{id}', 'ContactController@detail')->name('-detail');
+			Route::get('/jsonContact', 'ContactController@jsonContact')->name('-json'); 
 		});
 	});
 	Route::group(['prefix' => 'student', 'namespace' => 'student'], function(){
