@@ -8,6 +8,7 @@
     }
     .card:hover{
         margin-top:-5px;
+        color: red;
     }
     a.he{
         text-decoration: none;
@@ -20,8 +21,12 @@
                 <div class="col-sm-4">
                     <div class="card">
                     <img class="card-img-top" src="{{ asset('images/contoh_1.jpg') }}" alt="Card image cap" style="height: 290px;">
-                        <br>
-                        <a href="" class="he"><h3>Tugas Matematika Kelas 12</h3></a>
+                    <div class="card-body">
+                        <h5 class="card-title">Majas</h5>
+                        <p class="card-text">Bu Ria</p>
+                        <a href="#" class="btn btn-primary">Tugas Bahasa Indonesia</a>
+                        <p class="text-right">April 06,2002</p>
+                    </div>
                     </div>
                 </div>
                 <div class="col-sm-4">
