@@ -2,19 +2,29 @@
 @section('content')
     <style>
         .card:hover{
-            margin-top:-5px;
+            margin-top:-7px;
+        }
+        .card{
+            transition: 0.4s;
         }
         a.t-none{
             text-decoration: none;
         }
     </style>
     <div class="m-portlet ">
+        <div class="m-portlet__head">
+            <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                    <span class="m-portlet__head-icon">
+                        <i class="flaticon-signs"></i>
+                    </span>
+                    <h1 class="m-portlet__head-text">Tugas Siswa</h1>
+                </div>
+            </div>
+        </div>
         <div class="m-portlet__body  m-portlet__body--no-padding">
             <div class="row m-row--no-padding m-row--col-separator-xl">
                 <div class="container">
-                    <div class="row mx-2 my-5">
-                        <h1>Tugas Siswa</h1>
-                    </div>
                     <div class="row mx-2 my-5">
                         <div class="col-sm-4">
                             <a href="#" class="t-none">
