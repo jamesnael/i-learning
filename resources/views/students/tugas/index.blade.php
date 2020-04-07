@@ -1,6 +1,9 @@
 @extends('students.template.master')
 @section('content')
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1fcc6f6d5274cae36b8e663c5835ebef4554e587
     <style>
         .card:hover{
             margin-top:-5px;
@@ -15,7 +18,10 @@
                 <div class="container">
                     <div class="row mx-2 my-5">
                         <h1>Tugas Siswa</h1>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1fcc6f6d5274cae36b8e663c5835ebef4554e587
                     </div>
                     <div class="row mx-2 my-5">
                         <div class="col-sm-4">
