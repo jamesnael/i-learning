@@ -1,87 +1,104 @@
 @extends('students.template.master')
-
 @section('content')
-
-<style>
-    .card{
-        
-    }
-    .card:hover{
-        margin-top:-5px;
-    }
-    a.he{
-        text-decoration: none;
-    }
-</style>
-    <br><br><br>
-    <main>
-       <div class="container">
-        <div class="row">
-                <div class="col-sm-4">
-                    <div class="card">
-                    <img class="card-img-top" src="{{ asset('images/contoh_1.jpg') }}" alt="Card image cap" style="height: 290px;">
-                        <br>
-                        <a href="" class="he"><h3>Tugas Matematika Kelas 12</h3></a>
+    <style>
+        .card:hover{
+            margin-top:-5px;
+        }
+        a.t-none{
+            text-decoration: none;
+        }
+    </style>
+    <div class="m-portlet ">
+        <div class="m-portlet__body  m-portlet__body--no-padding">
+            <div class="row m-row--no-padding m-row--col-separator-xl">
+                <div class="container">
+                    <div class="row mx-2 my-5">
+                        <h1>Tugas Siswa</h1>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="card">
-                    <img class="card-img-top" src="{{ asset('images/5bfe3752a017f_thumb900.jpg') }}" alt="Card image cap" style="width: 100%; height: 290px;">
-                    <div class="card-body">
-                        <h5 class="card-title">Majas</h5>
-                        <p class="card-text">Bu Ria</p>
-                        <a href="#" class="btn btn-primary">Tugas Bahasa Indonesia</a>
-                        <p class="text-right">April 06,2002</p>
+                    <div class="row mx-2 my-5">
+                        <div class="col-sm-4">
+                            <a href="#" class="t-none">
+                                <div class="card shadow">
+                                    <img class="card-img-top" src="{{ asset('images/5bfe3752a017f_thumb900.jpg') }}" alt="Card image cap" style="width: 100%; height: 290px;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Majas</h5>
+                                        <p class="card-text">Bu Ria</p>
+                                        <button type="button" readonly="" class="btn btn-primary">Tugas Bahasa Indonesia</button>
+                                        <p class="text-right">April 06,2002</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="#" class="t-none">
+                                <div class="card shadow">
+                                    <img class="card-img-top" src="{{ asset('images/5bfe3752a017f_thumb900.jpg') }}" alt="Card image cap" style="width: 100%; height: 290px;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Passive Voice</h5>
+                                        <p class="card-text">Ms.Rachmi</p>
+                                        <button type="button" readonly="" class="btn btn-primary">Exam English</button>
+                                        <p class="text-right">April 05,2002</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="#" class="t-none">
+                                <div class="card shadow">
+                                    <img class="card-img-top" src="{{ asset('images/5bfe3752a017f_thumb900.jpg') }}" alt="Card image cap" style="width: 100%; height: 290px;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Invers Matriks</h5>
+                                        <p class="card-text">Bu Annisa</p>
+                                        <button type="button" readonly="" class="btn btn-primary">Tugas Matematika</button>
+                                        <p class="text-right">April 03,2002</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="card">
-                    <img class="card-img-top" src="{{ asset('images/5bfe3752a017f_thumb900.jpg') }}" alt="Card image cap" style="width: 100%; height: 290px;">
-                    <div class="card-body">
-                        <h5 class="card-title">Passive Voice</h5>
-                        <p class="card-text">Ms.Rachmi</p>
-                        <a href="#" class="btn btn-primary">Exam English</a>
-                        <p class="text-right">April 06,2002</p>
-                    </div>
-                    </div>
-                </div>
-            </div> <br>
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="card">
-                    <img class="card-img-top" src="{{ asset('images/5bfe3752a017f_thumb900.jpg') }}" alt="Card image cap" style="width: 100%; height: 290px;">
-                    <div class="card-body">
-                        <h5 class="card-title">Andoid Studio</h5>
-                        <p class="card-text">Maulana Yusuf Ibrohim</p>
-                        <a href="#" class="btn btn-primary">Tugas Produktif</a>
-                        <p class="text-right">April 06,2020</p>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="card">
-                    <img class="card-img-top" src="{{ asset('images/5bfe3752a017f_thumb900.jpg') }}" alt="Card image cap" style="width: 100%; height: 290px;">
-                    <div class="card-body">
-                        <h5 class="card-title">Pendidikan Kewarganegaraan</h5>
-                        <p class="card-text">Bu Nunuk Mujiana</p>
-                        <a href="#" class="btn btn-primary">Tugas Pendidikan Kewarganegaraan</a>
-                        <p class="text-right">April 06,2002</p>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="card">
-                    <img class="card-img-top" src="{{ asset('images/5bfe3752a017f_thumb900.jpg') }}" alt="Card image cap" style="width: 100%; height: 290px;">
-                    <div class="card-body">
-                        <h5 class="card-title">Basis Data</h5>
-                        <p class="card-text">Pak Atjep Rahmat</p>
-                        <a href="#" class="btn btn-primary">Tugas Basis Data</a>
-                        <p class="text-right">April 06,2002</p>
-                    </div>
+                    <div class="row mx-2 my-5">
+                        <div class="col-sm-4">
+                            <a href="#" class="t-none">
+                                <div class="card shadow">
+                                    <img class="card-img-top" src="{{ asset('images/5bfe3752a017f_thumb900.jpg') }}" alt="Card image cap" style="width: 100%; height: 290px;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Android Studio</h5>
+                                        <p class="card-text">Maulana Yusuf Ibrohim</p>
+                                        <button type="button" readonly="" class="btn btn-primary">Tugas Produktif</button>
+                                        <p class="text-right">Maret 26,2020</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="#" class="t-none">
+                                <div class="card shadow">
+                                    <img class="card-img-top" src="{{ asset('images/5bfe3752a017f_thumb900.jpg') }}" alt="Card image cap" style="width: 100%; height: 290px;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Pendidikan Kewarganegaraan</h5>
+                                        <p class="card-text">Bu Nunuk Mujiana</p>
+                                        <button type="button" readonly="" class="btn btn-primary">Tugas PPKN</button>
+                                        <p class="text-right">Maret 16,2002</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="#" class="t-none">
+                                <div class="card shadow">
+                                    <img class="card-img-top" src="{{ asset('images/5bfe3752a017f_thumb900.jpg') }}" alt="Card image cap" style="width: 100%; height: 290px;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Basis Data</h5>
+                                        <p class="card-text">Pak Atjep Rahmat</p>
+                                        <button type="button" readonly="" class="btn btn-primary">Tugas Basis Data</button>
+                                        <p class="text-right">Maret 06,2002</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </main>              
+    </div>
 @endsection
