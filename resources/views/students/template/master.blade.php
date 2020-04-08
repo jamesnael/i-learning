@@ -104,6 +104,7 @@
 			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
 		    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 		    <script src="{{ asset('js/plugins/general/general-plugin.js') }}"></script>
+			<script src="{{ asset('js/plugins/owlcarousel/owl.carousel.min.js') }}"></script>
 		    <script src="{{ asset('assets/demo/demo11/custom/crud/forms/widgets/select2.js') }}"></script>
 			<script src="{{ asset('assets/vendors/base/vendors.bundle.js') }}" type="text/javascript"></script>
 			<script src="{{ asset('assets/demo/demo11/base/scripts.bundle.js') }}" type="text/javascript"></script>
