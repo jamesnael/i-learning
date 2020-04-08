@@ -105,7 +105,7 @@ Route::group(['middleware'=>'auth'],function(){
 		//Tugas
 		Route::get('/','TugasController@index')->name('/');
 		// Materi
-		Route::get('/','MateriController@index')->name('/');
+		Route::get('/index','MateriController@index')->name('index.materi');
 		//Student Profile
 		Route::group(['prefix'=>'user-profile'],function(){
 			Route::get('/', 'ProfileController@index')->name('student-profile');
