@@ -7,7 +7,7 @@
 				<div class="m-stack m-stack--ver m-stack--general m-stack--fluid">
 					<div class="m-stack__item m-stack__item--middle m-brand__logo">
 						<a href="{{ route('dashboard') }}" class="m-brand__logo-wrapper" style="color:white">
-							<img alt="" width="110" src="{{ asset('images/logo-white.png') }}" class="mb-1" />
+							<img alt="" width="300" src="{{ asset('images/ilearning.png') }}" class="mb-1" />
 							<!-- <h5>Event Registration</h5> -->
 						</a>  
 					</div>

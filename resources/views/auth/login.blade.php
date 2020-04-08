@@ -40,7 +40,7 @@
                     <div class="m-login__container">
                         <div class="m-login__logo">
                             <a href="#">
-                                <img src="{{ asset('images/logo.png') }}" width="40%">     
+                                <img src="{{ asset('images/learning.png') }}" width="100%">     
                             </a>
                         </div>
                         <div class="m-login__signin">
