@@ -109,7 +109,9 @@ Route::group(['middleware'=>'auth'],function(){
 		});
 
 		// Materi
-		Route::get('/','MateriController@index')->name('/');
+		Route::group(['prefix' => 'materi', 'as' => 'materi'],function(){
+			Route::get('/','MateriController@index')->name('-student');
+		});
 
 		//Student Profile
 		Route::group(['prefix'=>'user-profile'],function(){
