@@ -1,118 +1,159 @@
 @extends('students.template.master')
-@section('content')
 
-    <style>
-        .card:hover{
-            margin-top:-7px;
+@section('content')
+	<style type="text/css">
+		.item:hover{
+			margin-top: -5px;
+		}
+		.item{
+			transition: 0.3s;
+		}
+		.a-black{
+			color: #575962 !important;
+		}
+		.a-black:hover{
+			color: #6167e6 !important;
+		}
+        .col-md-4{
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+            transition:0.4s;
         }
-        .card{
-            transition: 0.4s;
+        .col-md-4:hover{
+            margin-top: -7px;
         }
-        a.t-none{
-            text-decoration: none;
-        }
-    </style>
-    <div class="m-portlet ">
-        <div class="m-portlet__head">
-            <div class="m-portlet__head-caption">
-                <div class="m-portlet__head-title">
-                    <span class="m-portlet__head-icon">
-                        <i class="flaticon-signs"></i>
-                    </span>
-                    <h1 class="m-portlet__head-text">Materi Siswa</h1>
-                </div>
-            </div>
-        </div>
-        <div class="m-portlet__body m-portlet__body--no-padding">
-            <div class="row m-row--no-padding m-row--col-separator-xl">
-                <div class="container">
-                    <div class="row mx-2 my-5">
-                        <h1>Materi Siswa</h1>
-                    </div>
-                    <div class="row mx-2 my-5">
-                        <div class="col-sm-4">
-                            <a href="#" class="t-none">
-                                <div class="card shadow">
-                                    <img class="card-img-top" src="{{ asset('images/5bfe3752a017f_thumb900.jpg') }}" alt="Card image cap" style="width: 100%; height: 290px;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Majas</h5>
-                                        <p class="card-text">Bu Ria</p>
-                                        <button type="button" readonly="" class="btn btn-primary">Tugas Bahasa Indonesia</button>
-                                        <p class="text-right">April 06,2002</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-sm-4">
-                            <a href="#" class="t-none">
-                                <div class="card shadow">
-                                    <img class="card-img-top" src="{{ asset('images/5bfe3752a017f_thumb900.jpg') }}" alt="Card image cap" style="width: 100%; height: 290px;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Passive Voice</h5>
-                                        <p class="card-text">Ms.Rachmi</p>
-                                        <button type="button" readonly="" class="btn btn-primary">Exam English</button>
-                                        <p class="text-right">April 05,2002</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-sm-4">
-                            <a href="#" class="t-none">
-                                <div class="card shadow">
-                                    <img class="card-img-top" src="{{ asset('images/5bfe3752a017f_thumb900.jpg') }}" alt="Card image cap" style="width: 100%; height: 290px;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Invers Matriks</h5>
-                                        <p class="card-text">Bu Annisa</p>
-                                        <button type="button" readonly="" class="btn btn-primary">Tugas Matematika</button>
-                                        <p class="text-right">April 03,2002</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row mx-2 my-5">
-                        <div class="col-sm-4">
-                            <a href="#" class="t-none">
-                                <div class="card shadow">
-                                    <img class="card-img-top" src="{{ asset('images/5bfe3752a017f_thumb900.jpg') }}" alt="Card image cap" style="width: 100%; height: 290px;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Android Studio</h5>
-                                        <p class="card-text">Maulana Yusuf Ibrohim</p>
-                                        <button type="button" readonly="" class="btn btn-primary">Tugas Produktif</button>
-                                        <p class="text-right">Maret 26,2020</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-sm-4">
-                            <a href="#" class="t-none">
-                                <div class="card shadow">
-                                    <img class="card-img-top" src="{{ asset('images/5bfe3752a017f_thumb900.jpg') }}" alt="Card image cap" style="width: 100%; height: 290px;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Pendidikan Kewarganegaraan</h5>
-                                        <p class="card-text">Bu Nunuk Mujiana</p>
-                                        <button type="button" readonly="" class="btn btn-primary">Tugas PPKN</button>
-                                        <p class="text-right">Maret 16,2002</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-sm-4">
-                            <a href="#" class="t-none">
-                                <div class="card shadow">
-                                    <img class="card-img-top" src="{{ asset('images/5bfe3752a017f_thumb900.jpg') }}" alt="Card image cap" style="width: 100%; height: 290px;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Basis Data</h5>
-                                        <p class="card-text">Pak Atjep Rahmat</p>
-                                        <button type="button" readonly="" class="btn btn-primary">Tugas Basis Data</button>
-                                        <p class="text-right">Maret 06,2002</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	</style>
+	<div class="m-portlet ">
+		<div class="m-portlet__body  m-portlet__body--no-padding">
+			<div class="row m-row--no-padding m-row--col-separator-xl">
+				<div class="col-md-12">
+					<div class="m-widget24">					 
+					    <div class="m-widget24__item">
+							<div class="d-flex">
+						        <h2 class="m-widget24__title ml-5 pl-3" style="font-size : 20px;">
+						    		Materi Terbaru
+								</h2>
+							</div>
+							
+							<div class="mt-5">
+								<div class="d-flex">
+							        <h2 class="m-widget24__title ml-5 pl-4" style="font-size : 20px;">
+							    		Pembelajaran Untuk Kelas X
+									</h2>
+								</div>
+								<div class="container mt-3">
+									<div class="row">
+										<div class="col-md-4">
+									    	<a href="#" class="m-link a-black">
+										    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
+										    	<div class="mt-3 ml-2">
+											    	<h5>Invers Matriks</h5>
+											        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
+										    	</div>
+										    </a>
+										</div>
+										<div class="col-md-4">
+									    	<a href="#" class="m-link a-black">
+										    	<img src="{{ asset('images/contoh_2.jpg') }}" width="100%">
+										    	<div class="mt-3 ml-2">
+											    	<h5>Invers Matriks</h5>
+											        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
+										    	</div>
+										    </a>
+										</div>
+										<div class="col-md-4">
+									    	<a href="#" class="m-link a-black">
+										    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
+										    	<div class="mt-3 ml-2">
+											    	<h5>Invers Matriks</h5>
+											        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
+										    	</div>
+										    </a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="mt-5">
+								<div class="d-flex">
+							        <h2 class="m-widget24__title ml-5 pl-4" style="font-size : 20px;">
+							    		Pembelajaran Untuk Kelas XI
+									</h2>
+								</div>
+								<div class="container mt-3">
+									<div class="row">
+										<div class="col-md-4">
+									    	<a href="#" class="m-link a-black">
+										    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
+										    	<div class="mt-3 ml-2">
+											    	<h5>Invers Matriks</h5>
+											        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
+										    	</div>
+										    </a>
+										</div>
+										<div class="col-md-4">
+									    	<a href="#" class="m-link a-black">
+										    	<img src="{{ asset('images/contoh_2.jpg') }}" width="100%">
+										    	<div class="mt-3 ml-2">
+											    	<h5>Invers Matriks</h5>
+											        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
+										    	</div>
+										    </a>
+										</div>
+										<div class="col-md-4">
+									    	<a href="#" class="m-link a-black">
+										    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
+										    	<div class="mt-3 ml-2">
+											    	<h5>Invers Matriks</h5>
+											        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
+										    	</div>
+										    </a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="mt-5">
+								<div class="d-flex">
+							        <h2 class="m-widget24__title ml-5 pl-4" style="font-size : 20px;">
+							    		Pembelajaran Untuk Kelas XII
+									</h2>
+								</div>
+								<div class="container mt-3">
+									<div class="row">
+										<div class="col-md-4">
+									    	<a href="#" class="m-link a-black">
+										    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
+										    	<div class="mt-3 ml-2">
+											    	<h5>Invers Matriks</h5>
+											        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
+										    	</div>
+										    </a>
+										</div>
+										<div class="col-md-4">
+									    	<a href="#" class="m-link a-black">
+										    	<img src="{{ asset('images/contoh_2.jpg') }}" width="100%">
+										    	<div class="mt-3 ml-2">
+											    	<h5>Invers Matriks</h5>
+											        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
+										    	</div>
+										    </a>
+										</div>
+										<div class="col-md-4">
+									    	<a href="#" class="m-link a-black">
+										    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
+										    	<div class="mt-3 ml-2">
+											    	<h5>Invers Matriks</h5>
+											        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
+										    	</div>
+										    </a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				<!--End::Timeline 3 -->
+				<div class="mt-5"></div>
+			</div>
+		</div>
+	</div>
+</div>
 @endsection
