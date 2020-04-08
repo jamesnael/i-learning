@@ -39,12 +39,12 @@
 								</a>
 							</li>
 							<li class="m-nav__item m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center m-dropdown--mobile-full-width m-dropdown--skin-light	m-list-search m-list-search--skin-light" >
-								<a href="{{route('/')}}" class="m-nav__link m-dropdown__toggle">
+								<a href="{{ route('tugas-student') }}" class="m-nav__link m-dropdown__toggle">
 									<span class="m-nav__link-icon"><span class="m-nav__link-icon-wrapper">Tugas Siswa</span></span>
 								</a>
 							</li>
 							<li class="m-nav__item m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center m-dropdown--mobile-full-width m-dropdown--skin-light	m-list-search m-list-search--skin-light" >
-								<a href="{{route('/')}}" class="m-nav__link m-dropdown__toggle">
+								<a href="#" class="m-nav__link m-dropdown__toggle">
 									<span class="m-nav__link-icon"><span class="m-nav__link-icon-wrapper">Contact Us</span></span>
 								</a>
 							</li>
@@ -111,10 +111,10 @@
 												</li>
 												<li class="m-nav__item">
 													<a href="{{ route('student-profile') }}" class="m-nav__link">
-														<i class="m-nav__link-icon flaticon-profile-1"></i>
+														<i class="m-nav__link-icon flaticon-profile-1" style="color: #6167e6"></i>
 														<span class="m-nav__link-title">  
 															<span class="m-nav__link-wrap">      
-																<span class="m-nav__link-text">My Profile</span>      
+																<span class="m-nav__link-text" style="color: #6167e6">My Profile</span>      
 															</span>
 														</span>
 													</a>

@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Materi extends Model
+class PengumpulanTugas extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'tb_materi';
+    protected $table = 'tb_pengumpulan_tugas';
 
     protected $fillable = [
-        'judul_materi', 'materi_url', 'materi_mapel', 'materi_kelas', 'isi_materi', 'view_count'
+        'file_tugas', 'student_id', 'task_id', 'status'
     ];
 
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];

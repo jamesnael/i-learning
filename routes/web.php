@@ -53,7 +53,6 @@ Route::group(['middleware'=>'auth'],function(){
 			Route::delete('/delete/', 'TugasController@destroy')->name('-delete');
 			Route::get('/edit/{id}', 'TugasController@edit')->name('-edit');
 			Route::put('/update/{id}', 'TugasController@update')->name('-update');
-			Route::get('/detail/{id}', 'TugasController@detail')->name('-detail');
 		});
 
 		//Teacher Profile
@@ -103,7 +102,11 @@ Route::group(['middleware'=>'auth'],function(){
 	});
 	Route::group(['prefix' => 'student', 'namespace' => 'student'], function(){
 		//Tugas
-		Route::get('/','TugasController@index')->name('/');
+		Route::group(['prefix' => 'tugas', 'as' => 'tugas'],function(){
+			Route::get('/','TugasController@index')->name('-student');
+			Route::get('/detail/{url}','TugasController@detail')->name('-detail');
+			Route::post('/kirimTugas', 'TugasController@kirim_tugas')->name('-kirim');
+		});
 
 		//Student Profile
 		Route::group(['prefix'=>'user-profile'],function(){
