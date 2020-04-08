@@ -15,12 +15,14 @@ class CreateTbMateriTable extends Migration
     {
         Schema::create('tb_materi', function (Blueprint $table) {
             $table->id();
+            $table->integer('teacher_id');
             $table->string('judul_materi');
             $table->string('materi_url');
             $table->string('materi_mapel');
             $table->string('materi_kelas');
             $table->text('isi_materi');
-            $table->integer('teacher_id');
+            $table->string('thumbnail_image')->nullable();
+            $table->integer('view_count');
             $table->timestamps();
             $table->datetime('deleted_at')->nullable();
         });

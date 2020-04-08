@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Tugas;
+use App\Models\PengumpulanTugas;
+use App\User;
 use DB;
 use Redirect;
 use Storage;
@@ -93,6 +95,15 @@ class TugasController extends Controller
             /* End Write Log */
 
             $data->save();
+            $student = User::where('role', 'student')->where('kelas', $request->tugas_kelas)->get();
+            foreach($student as $students)
+            {
+                PengumpulanTugas::Create([
+                    'student_id' => $students->id,
+                    'task_id'    => $data->id,
+                    'status'     => '0'
+                ]);
+            }
             DB::commit();
 
             return redirect()->route('tugas')->with('alert','Success!')->with('message','Success add new tugas '.$data->judul_tugas.'.');

@@ -53,7 +53,6 @@ Route::group(['middleware'=>'auth'],function(){
 			Route::delete('/delete/', 'TugasController@destroy')->name('-delete');
 			Route::get('/edit/{id}', 'TugasController@edit')->name('-edit');
 			Route::put('/update/{id}', 'TugasController@update')->name('-update');
-			Route::get('/detail/{id}', 'TugasController@detail')->name('-detail');
 		});
 
 		//Teacher Profile
@@ -103,9 +102,21 @@ Route::group(['middleware'=>'auth'],function(){
 	});
 	Route::group(['prefix' => 'student', 'namespace' => 'student'], function(){
 		//Tugas
-		Route::get('/','TugasController@index')->name('/');
+		Route::group(['prefix' => 'tugas', 'as' => 'tugas'],function(){
+			Route::get('/','TugasController@index')->name('-student');
+			Route::get('/detail/{url}','TugasController@detail')->name('-detail');
+			Route::post('/kirimTugas', 'TugasController@kirim_tugas')->name('-kirim');
+		});
+
 		// Materi
+<<<<<<< HEAD
 		Route::get('/index','MateriController@index')->name('index.materi');
+=======
+		Route::group(['prefix' => 'materi', 'as' => 'materi'],function(){
+			Route::get('/','MateriController@index')->name('-student');
+		});
+
+>>>>>>> 87b3a1472c46aa5500af084cb87876b63f2cff98
 		//Student Profile
 		Route::group(['prefix'=>'user-profile'],function(){
 			Route::get('/', 'ProfileController@index')->name('student-profile');
@@ -114,6 +125,5 @@ Route::group(['middleware'=>'auth'],function(){
 			Route::post('/changePassword', 'ProfileController@update_password')->name('student-change-password');
 		});
 	});
-	
 });
 

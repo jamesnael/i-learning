@@ -16,4 +16,14 @@ class Tugas extends Model
     ];
 
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
+
+    public function teacher()
+    {
+        return $this->hasOne('App\User', 'id', 'teacher_id');
+    }
+
+    public function pengumpulan()
+    {
+        return $this->hasMany('App\Models\PengumpulanTugas', 'task_id', 'id');
+    }
 }

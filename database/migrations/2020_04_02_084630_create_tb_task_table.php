@@ -15,14 +15,14 @@ class CreateTbTaskTable extends Migration
     {
         Schema::create('tb_task', function (Blueprint $table) {
             $table->id();
+            $table->integer('teacher_id');
             $table->string('judul_tugas');
             $table->string('tugas_url');
             $table->string('tugas_mapel');
             $table->string('tugas_kelas');
             $table->text('isi_tugas');
             $table->datetime('deadline_tugas');
-            $table->text('file_tugas');
-            $table->integer('teacher_id');
+            $table->text('file_tugas')->nullable();
             $table->timestamps();
             $table->datetime('deleted_at')->nullable();
         });

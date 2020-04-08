@@ -42,7 +42,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'student@student.com',
             'role' => 'student',
             'phone_number' => '+6281234566789',
-            'kelas' => '12',
+            'kelas' => 'XII',
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
         ]);

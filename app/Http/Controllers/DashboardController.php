@@ -24,11 +24,29 @@ class DashboardController extends Controller
         $userRole = Auth::user()->role;
 
         if ($userRole == "admin") {
-            return view('admin.dashboard.index',compact('total_student', 'total_teacher', 'total_learning'));
+            return view('admin.dashboard.index',compact('total_student', 'total_teacher', 'total_learning'))->with([
+                'page'      => $this,
+                
+                $this->breadcrumbs = [
+                    ['url' => '', 'title' =>'Dashboard Admin'],
+                ],
+            ]);
         }elseif ($userRole == "teacher"){
-            return view('teachers.dashboard.index');
+            return view('teachers.dashboard.index')->with([
+                'page'      => $this,
+                
+                $this->breadcrumbs = [
+                    ['url' => '', 'title' =>'Dashboard Teachers'],
+                ],
+            ]);
         }elseif ($userRole == "student"){
-            return view('students.dashboard.index');
+            return view('students.dashboard.index')->with([
+                'page'      => $this,
+                
+                $this->breadcrumbs = [
+                    ['url' => '', 'title' =>'Dashboard'],
+                ],
+            ]);
         }
         // return view('teachers.dashboard.index');
     }
