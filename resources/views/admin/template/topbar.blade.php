@@ -36,7 +36,7 @@
 						<ul class="m-topbar__nav m-nav m-nav--inline">
 							<li class="m-nav__item m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center m-dropdown--mobile-full-width m-dropdown--skin-light	m-list-search m-list-search--skin-light" m-dropdown-toggle="click" id="m_quicksearch" m-quicksearch-mode="dropdown" m-dropdown-persistent="1">
 							<a href="#" class="m-nav__link m-dropdown__toggle">
-								<span class="m-nav__link-icon"><span class="m-nav__link-icon-wrapper"><i class="flaticon-search-1"></i></span></span>
+								<span class="m-nav__link-icon"><span class="m-nav__link-icon-wrapper"><i class="flaticon-search-1" style="color:white !important"></i></span></span>
 							</a>
 							<div class="m-dropdown__wrapper">					
 								<span class="m-dropdown__arrow m-dropdown__arrow--center"></span>
