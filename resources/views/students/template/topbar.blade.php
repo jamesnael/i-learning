@@ -33,8 +33,13 @@
 				<div id="m_header_topbar" class="m-topbar m-stack m-stack--ver m-stack--general">
 					<div class="m-stack__item m-topbar__nav-wrapper">
 						<ul class="m-topbar__nav m-nav m-nav--inline">
+<<<<<<< HEAD
+							<li class="m-nav__item m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center m-dropdown--mobile-full-width m-dropdown--skin-light	m-list-search m-list-search--skin-light" >
+								<a href="{{route('/')}}" class="m-nav__link m-dropdown__toggle">
+=======
 							<li class="m-nav__item m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center m-dropdown--mobile-full-width m-dropdown--skin-light" >
 								<a href="#" class="m-nav__link m-dropdown__toggle">
+>>>>>>> eaf80da689928e45213b081accab4e2745ec05e6
 									<span class="m-nav__link-icon"><span class="m-nav__link-icon-wrapper">Materi</span></span>
 								</a>
 							</li>

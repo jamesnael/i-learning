@@ -108,6 +108,9 @@ Route::group(['middleware'=>'auth'],function(){
 			Route::post('/kirimTugas', 'TugasController@kirim_tugas')->name('-kirim');
 		});
 
+		// Materi
+		Route::get('/','MateriController@index')->name('/');
+
 		//Student Profile
 		Route::group(['prefix'=>'user-profile'],function(){
 			Route::get('/', 'ProfileController@index')->name('student-profile');
@@ -116,6 +119,5 @@ Route::group(['middleware'=>'auth'],function(){
 			Route::post('/changePassword', 'ProfileController@update_password')->name('student-change-password');
 		});
 	});
-	
 });
 
