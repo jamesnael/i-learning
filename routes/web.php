@@ -109,12 +109,11 @@ Route::group(['middleware'=>'auth'],function(){
 			Route::get('/detail/{url}','TugasController@detail')->name('-detail');
 			Route::post('/kirimTugas', 'TugasController@kirim_tugas')->name('-kirim');
 		});
-
 		// Materi
+		Route::get('/index','MateriController@index')->name('index.materi');
 		Route::group(['prefix' => 'materi', 'as' => 'materi'],function(){
 			Route::get('/','MateriController@index')->name('-student');
 		});
-
 		//Student Profile
 		Route::group(['prefix'=>'user-profile'],function(){
 			Route::get('/', 'ProfileController@index')->name('student-profile');
