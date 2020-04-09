@@ -1,6 +1,5 @@
 @extends('students.template.master')
 @section('content')
-
     <style>
         .card:hover{
             margin-top:-7px;

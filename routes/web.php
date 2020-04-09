@@ -41,7 +41,6 @@ Route::group(['middleware'=>'auth'],function(){
 			Route::delete('/delete/', 'MateriController@destroy')->name('-delete');
 			Route::get('/edit/{id}', 'MateriController@edit')->name('-edit');
 			Route::put('/update/{id}', 'MateriController@update')->name('-update');
-			Route::get('/detail/{id}', 'MateriController@detail')->name('-detail');
 		});
 
 		//Tugas
@@ -110,9 +109,9 @@ Route::group(['middleware'=>'auth'],function(){
 			Route::post('/kirimTugas', 'TugasController@kirim_tugas')->name('-kirim');
 		});
 		// Materi
-		Route::get('/index','MateriController@index')->name('index.materi');
 		Route::group(['prefix' => 'materi', 'as' => 'materi'],function(){
 			Route::get('/','MateriController@index')->name('-student');
+			Route::get('/detail/{url}','MateriController@detail')->name('-detail');
 		});
 		//Student Profile
 		Route::group(['prefix'=>'user-profile'],function(){

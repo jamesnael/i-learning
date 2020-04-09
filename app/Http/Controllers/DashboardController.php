@@ -17,9 +17,16 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $total_student = User::where('role','student')->count();
-        $total_teacher = User::where('role','student')->count();
+        //Dashboard Admin
+        $total_student  = User::where('role','student')->count();
+        $total_teacher  = User::where('role','student')->count();
         $total_learning = Materi::count();
+
+        //Dashboard Students
+        $materi     = Materi::latest()->take(5)->get();
+        $materi_x   = Materi::where('materi_kelas','X')->latest()->take(3)->get();
+        $materi_xi  = Materi::where('materi_kelas','XI')->latest()->take(3)->get();
+        $materi_xii = Materi::where('materi_kelas','XII')->latest()->take(3)->get();
 
         $userRole = Auth::user()->role;
 
@@ -41,8 +48,12 @@ class DashboardController extends Controller
             ]);
         }elseif ($userRole == "student"){
             return view('students.dashboard.index')->with([
-                'page'      => $this,
-                
+                'page'       => $this,
+                'materi'     => $materi,
+                'materi_x'   => $materi_x,
+                'materi_xi'  => $materi_xi,
+                'materi_xii' => $materi_xii,
+
                 $this->breadcrumbs = [
                     ['url' => '', 'title' =>'Dashboard'],
                 ],

@@ -44,60 +44,17 @@
 							</div>
 							<div class="container mt-5">
 								<div class="owl-carousel owl-theme">
-								    <div class="item">
-								    	<a href="#" class="m-link a-black">
-									    	<img src="{{ asset('images/contoh_1.jpg') }}">
-									    	<div class="mt-3 ml-2">
-										    	<h5>Invers Matriks</h5>
-										        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
-									    	</div>
-								    	</a>
-								    </div>
-								    <div class="item">
-								    	<a href="#" class="m-link a-black">
-									    	<img src="{{ asset('images/contoh_2.jpg') }}">
-									    	<div class="mt-3 ml-2">
-										    	<h5>Invers Matriks</h5>
-										        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
-									    	</div>
-								    	</a>
-								    </div>
-								    <div class="item">
-								    	<a href="#" class="m-link a-black">
-									    	<img src="{{ asset('images/contoh_1.jpg') }}">
-									    	<div class="mt-3 ml-2">
-										    	<h5>Invers Matriks</h5>
-										        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
-									    	</div>
-								    	</a>
-								    </div>
-								    <div class="item">
-								    	<a href="#" class="m-link a-black">
-									    	<img src="{{ asset('images/contoh_2.jpg') }}">
-									    	<div class="mt-3 ml-2">
-										    	<h5>Invers Matriks</h5>
-										        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
-									    	</div>
-								    	</a>
-								    </div>
-								    <div class="item">
-								    	<a href="#" class="m-link a-black">
-									    	<img src="{{ asset('images/contoh_1.jpg') }}">
-									    	<div class="mt-3 ml-2">
-										    	<h5>Invers Matriks</h5>
-										        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
-									    	</div>
-								    	</a>
-								    </div>
-								    <div class="item">
-								    	<a href="#" class="m-link a-black">
-									    	<img src="{{ asset('images/contoh_2.jpg') }}">
-									    	<div class="mt-3 ml-2">
-										    	<h5>Invers Matriks</h5>
-										        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
-									    	</div>
-								    	</a>
-								    </div>
+									@foreach($materi as $data)
+									    <div class="item">
+									    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
+										    	<img src="{{ asset('images/contoh_1.jpg') }}">
+										    	<div class="mt-3 ml-2">
+											    	<h5>{{ $data->judul_materi }}</h5>
+											        <p>Materi {{ $data->materi_mapel }} Kelas {{ $data->materi_kelas }}<br>{{ date('d F Y', strtotime($data->created_at)) }}</p>
+										    	</div>
+									    	</a>
+									    </div>
+								    @endforeach
 								</div>
 							</div>
 							<div class="mt-5">
@@ -115,33 +72,17 @@
 								</div>
 								<div class="container mt-3">
 									<div class="row">
-										<div class="col-md-4">
-									    	<a href="#" class="m-link a-black">
-										    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
-										    	<div class="mt-3 ml-2">
-											    	<h5>Invers Matriks</h5>
-											        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
-										    	</div>
-										    </a>
-										</div>
-										<div class="col-md-4">
-									    	<a href="#" class="m-link a-black">
-										    	<img src="{{ asset('images/contoh_2.jpg') }}" width="100%">
-										    	<div class="mt-3 ml-2">
-											    	<h5>Invers Matriks</h5>
-											        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
-										    	</div>
-										    </a>
-										</div>
-										<div class="col-md-4">
-									    	<a href="#" class="m-link a-black">
-										    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
-										    	<div class="mt-3 ml-2">
-											    	<h5>Invers Matriks</h5>
-											        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
-										    	</div>
-										    </a>
-										</div>
+										@foreach($materi_x as $data)
+											<div class="col-md-4">
+										    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
+											    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
+											    	<div class="mt-3 ml-2">
+												    	<h5>{{ $data->judul_materi }}</h5>
+												        <p>Materi {{ $data->materi_mapel }} Kelas {{ $data->materi_kelas }}<br>{{ date('d F Y', strtotime($data->created_at)) }}</p>
+											    	</div>
+											    </a>
+											</div>
+										@endforeach
 									</div>
 								</div>
 							</div>
@@ -160,33 +101,17 @@
 								</div>
 								<div class="container mt-3">
 									<div class="row">
-										<div class="col-md-4">
-									    	<a href="#" class="m-link a-black">
-										    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
-										    	<div class="mt-3 ml-2">
-											    	<h5>Invers Matriks</h5>
-											        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
-										    	</div>
-										    </a>
-										</div>
-										<div class="col-md-4">
-									    	<a href="#" class="m-link a-black">
-										    	<img src="{{ asset('images/contoh_2.jpg') }}" width="100%">
-										    	<div class="mt-3 ml-2">
-											    	<h5>Invers Matriks</h5>
-											        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
-										    	</div>
-										    </a>
-										</div>
-										<div class="col-md-4">
-									    	<a href="#" class="m-link a-black">
-										    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
-										    	<div class="mt-3 ml-2">
-											    	<h5>Invers Matriks</h5>
-											        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
-										    	</div>
-										    </a>
-										</div>
+										@foreach($materi_xi as $data)
+											<div class="col-md-4">
+										    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
+											    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
+											    	<div class="mt-3 ml-2">
+												    	<h5>{{ $data->judul_materi }}</h5>
+												        <p>Materi {{ $data->materi_mapel }} Kelas {{ $data->materi_kelas }}<br>{{ date('d F Y', strtotime($data->created_at)) }}</p>
+											    	</div>
+											    </a>
+											</div>
+										@endforeach
 									</div>
 								</div>
 							</div>
@@ -205,33 +130,17 @@
 								</div>
 								<div class="container mt-3">
 									<div class="row">
-										<div class="col-md-4">
-									    	<a href="#" class="m-link a-black">
-										    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
-										    	<div class="mt-3 ml-2">
-											    	<h5>Invers Matriks</h5>
-											        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
-										    	</div>
-										    </a>
-										</div>
-										<div class="col-md-4">
-									    	<a href="#" class="m-link a-black">
-										    	<img src="{{ asset('images/contoh_2.jpg') }}" width="100%">
-										    	<div class="mt-3 ml-2">
-											    	<h5>Invers Matriks</h5>
-											        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
-										    	</div>
-										    </a>
-										</div>
-										<div class="col-md-4">
-									    	<a href="#" class="m-link a-black">
-										    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
-										    	<div class="mt-3 ml-2">
-											    	<h5>Invers Matriks</h5>
-											        <p>Materi Matematika Kelas 12<br>April 05, 2020</p>
-										    	</div>
-										    </a>
-										</div>
+										@foreach($materi_xii as $data)
+											<div class="col-md-4">
+										    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
+											    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
+											    	<div class="mt-3 ml-2">
+												    	<h5>{{ $data->judul_materi }}</h5>
+												        <p>Materi {{ $data->materi_mapel }} Kelas {{ $data->materi_kelas }}<br>{{ date('d F Y', strtotime($data->created_at)) }}</p>
+											    	</div>
+											    </a>
+											</div>
+										@endforeach
 									</div>
 								</div>
 							</div>

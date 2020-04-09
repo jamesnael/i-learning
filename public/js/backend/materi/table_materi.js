@@ -81,7 +81,7 @@ var DatatableRemoteAjax = function() {
                         else if(row[5] == 'XI') {
                             return 'XI (Sebelas)';
                         }
-                        else if(row[5] == 'XI') {
+                        else if(row[5] == 'XII') {
                             return 'XII (Dua belas)';
                         }
                     },
