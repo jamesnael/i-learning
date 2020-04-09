@@ -34,11 +34,7 @@
 					<div class="m-stack__item m-topbar__nav-wrapper">
 						<ul class="m-topbar__nav m-nav m-nav--inline">
 							<li class="m-nav__item m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center m-dropdown--mobile-full-width m-dropdown--skin-light" >
-<<<<<<< HEAD
-								<a href="{{route('index.materi')}}" class="m-nav__link m-dropdown__toggle">
-=======
 								<a href="{{ route('materi-student') }}" class="m-nav__link m-dropdown__toggle">
->>>>>>> 87b3a1472c46aa5500af084cb87876b63f2cff98
 									<span class="m-nav__link-icon"><span class="m-nav__link-icon-wrapper">Materi</span></span>
 								</a>
 							</li>
