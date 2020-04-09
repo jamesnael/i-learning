@@ -38,15 +38,91 @@
     </div>
 </div>
 
+<!--begin::Modal -->
+    <div class="modal fade bd-example-modal-lg" id="Modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">
+                        Details Students Works
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">
+                            &times;
+                        </span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#m_tabs_2_1">Finished Works</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#m_tabs_2_2">Unfinished Works</a>
+                        </li>
+                    </ul> 
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="m_tabs_2_1" role="tabpanel">
+                            <table class="table table-striped table-bordered table-hover" id="table-finish">
+                                
+                            </table>
+                        </div>
+                        <div class="tab-pane" id="m_tabs_2_2" role="tabpanel">
+                            <table class="table table-striped table-bordered table-hover" id="table-unfinish">
+
+                            </table>
+                        </div>
+                    </div>  
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--end::Modal -->
+
 <script type="text/javascript">
-    var index       = "{{ route('tugas') }}";
-    var loadTable   = "{{ url('teacher/tugas/loadTable') }}";
-    var delete_     = "{{ url('teacher/tugas/delete/') }}";
-    var edit_       = "{{ url('teacher/tugas/edit/') }}";
-    var title_msg   = "{{ Session::get('alert') }}";
-    var asset_image = "{{ asset('images/teacher/tugas') }}";
-    var msg         = "{{ Session::get('message') }}";
-    var exist       = "{{ Session::has('alert') }}";
+    var index              = "{{ route('tugas') }}";
+    var loadTable          = "{{ url('teacher/tugas/loadTable') }}";
+    var delete_            = "{{ url('teacher/tugas/delete/') }}";
+    var edit_              = "{{ url('teacher/tugas/edit/') }}";
+    var title_msg          = "{{ Session::get('alert') }}";
+    var asset_image        = "{{ asset('images/teacher/tugas') }}";
+    var msg                = "{{ Session::get('message') }}";
+    var exist              = "{{ Session::has('alert') }}";
+    var RouteModalFinish   = "{{ route('tugas-json-finish') }}";
+    var RouteModalUnfinish = "{{ route('tugas-json-unfinish') }}";
+
+    $(document).ready(function(){
+        $('#Modal').on('show.bs.modal', function (e) {
+            var rowid = $(e.relatedTarget).data('id');
+            $.ajax({
+                type : 'GET',
+                url : RouteModalFinish,
+                data : {
+                    id : rowid
+                },
+                success: function(result) {
+                    $('#table-finish').html(result);
+                }
+            });
+
+            $.ajax({
+                type : 'GET',
+                url : RouteModalUnfinish,
+                data : {
+                    id : rowid
+                },
+                success: function(result) {
+                    $('#table-unfinish').html(result);
+                }
+            });
+        });
+    });
 </script>
 <script type="text/javascript" src="{{ asset('js/backend/tugas/table_tugas.js') }}"></script>
 @endsection

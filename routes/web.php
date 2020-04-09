@@ -53,6 +53,8 @@ Route::group(['middleware'=>'auth'],function(){
 			Route::delete('/delete/', 'TugasController@destroy')->name('-delete');
 			Route::get('/edit/{id}', 'TugasController@edit')->name('-edit');
 			Route::put('/update/{id}', 'TugasController@update')->name('-update');
+			Route::get('/jsonTugasFinish', 'TugasController@jsonTugasFinish')->name('-json-finish');
+			Route::get('/jsonTugasUnfinish', 'TugasController@jsonTugasUnfinish')->name('-json-unfinish');
 		});
 
 		//Teacher Profile

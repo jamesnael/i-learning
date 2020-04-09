@@ -27,6 +27,7 @@
                             <th>Judul Materi</th>
                             <th>Mapel Materi</th>
                             <th>Kelas</th>
+                            <th>View Count</th>
                             <th>Created At</th>
                             <th>Action</th>
                         </tr>

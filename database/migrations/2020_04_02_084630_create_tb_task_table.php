@@ -15,7 +15,7 @@ class CreateTbTaskTable extends Migration
     {
         Schema::create('tb_task', function (Blueprint $table) {
             $table->id();
-            $table->integer('teacher_id');
+            $table->unsignedBigInteger('teacher_id');
             $table->string('judul_tugas');
             $table->string('tugas_url');
             $table->string('tugas_mapel');
@@ -25,6 +25,10 @@ class CreateTbTaskTable extends Migration
             $table->text('file_tugas')->nullable();
             $table->timestamps();
             $table->datetime('deleted_at')->nullable();
+            $table->foreign('teacher_id')
+                    ->references('id')
+                    ->on('users')
+                    ->onDelete('cascade');
         });
     }
 

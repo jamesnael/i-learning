@@ -89,7 +89,13 @@ var DatatableRemoteAjax = function() {
                 },
                 {
                     "render": function(data, type, row) {
-                        return formattedDateddMMyyyy(row[7]);
+                        return '<i class="fa fa-eye"></i> <b>' + row[7] ;
+                    },
+                    "visible": true
+                },
+                {
+                    "render": function(data, type, row) {
+                        return formattedDateddMMyyyy(row[8]);
                     },
                     "visible": true
                 },

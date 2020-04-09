@@ -273,4 +273,96 @@ class TugasController extends Controller
         
         return loadTableServerSide($path_model, $model, $condition, $row, $row_search, $join, $order, $groupby, $limit, $offset, $distinct);
     }
+
+    public function jsonTugasFinish(Request $request)
+    {
+        $tugas = PengumpulanTugas::where('task_id',$request->id)->where('status','1')->get();
+        if($tugas == '[]'){
+            echo "
+                <thead>
+                    <tr>
+                        <th>Photo</th>
+                        <th>Students Name</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class='text-center' colspan='3'>No Results Data</td>
+                    </tr>
+                </tbody>
+                ";
+        }else{
+            foreach($tugas as $data){
+                echo "
+                    <thead>
+                        <tr>
+                            <th>Photo</th>
+                            <th>Students Name</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            ";
+                            if(!empty($data->user->photo)){
+                                echo "<td class='align-middle' width='75'><img width='40' src='../images/user_photo/".$data->user->photo."' class='m--img-rounded m--marginless m--img-centered' alt=''></td>";
+                            }else{
+                                echo "<td class='align-middle' width='75'><img width='40' src='../assets/no_image.png' class='m--img-rounded m--marginless m--img-centered' alt=''></td>";
+                            }
+                            echo"
+                            <td class='align-middle'>".$data->user->name."</td>
+                            <td class='align-middle'><label class='text-success'>Finished</label></td>
+                        </tr>
+                    </tbody>
+                    ";
+            }
+        }
+    }
+
+    public function jsonTugasUnfinish(Request $request)
+    {
+        $tugas = PengumpulanTugas::where('task_id',$request->id)->where('status','0')->get();
+        if($tugas == '[]'){
+            echo "
+                <thead>
+                    <tr>
+                        <th>Photo</th>
+                        <th>Students Name</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class='text-center' colspan='3'>No Results Data</td>
+                    </tr>
+                </tbody>
+                ";
+        }else{
+            foreach($tugas as $data){
+                echo "
+                    <thead>
+                        <tr>
+                            <th>Photo</th>
+                            <th>Students Name</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            ";
+                            if(!empty($data->user->photo)){
+                                echo "<td class='align-middle' width='75'><img width='40' src='../images/user_photo/".$data->user->photo."' class='m--img-rounded m--marginless m--img-centered' alt=''></td>";
+                            }else{
+                                echo "<td class='align-middle' width='75'><img width='40' src='../assets/no_image.png' class='m--img-rounded m--marginless m--img-centered' alt=''></td>";
+                            }
+                            echo"
+                            <td class='align-middle'>".$data->user->name."</td>
+                            <td class='align-middle'><label class='text-danger'>Unfinished</label></td>
+                        </tr>
+                    </tbody>
+                    ";
+            }
+        }
+    }
 }

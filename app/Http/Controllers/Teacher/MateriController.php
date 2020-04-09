@@ -63,6 +63,7 @@ class MateriController extends Controller
             $data->materi_mapel = $request->materi_mapel;
             $data->materi_kelas = $request->materi_kelas;
             $data->isi_materi   = $request->isi_materi;
+            $data->view_count   = '0';
             $data->teacher_id   = Auth::user()->id;
 
             /* Write log */
@@ -218,8 +219,8 @@ class MateriController extends Controller
         $path_model   = "App\Models\\";
         $model        = "Materi";
         $condition    = "teacher_id = '".Auth::user()->id."'";
-        $row          = array('id' ,'judul_materi', 'materi_url' ,'materi_mapel' ,'materi_kelas' , 'isi_materi', 'created_at');
-        $row_search   = array('id' ,'judul_materi', 'materi_url' ,'materi_mapel' ,'materi_kelas' , 'isi_materi', 'created_at');
+        $row          = array('id' ,'judul_materi', 'materi_url' ,'materi_mapel' ,'materi_kelas' , 'isi_materi', 'view_count', 'created_at');
+        $row_search   = array('id' ,'judul_materi', 'materi_url' ,'materi_mapel' ,'materi_kelas' , 'isi_materi', 'view_count', 'created_at');
         $join         = "";
         $order        = "";
         $groupby      = "";

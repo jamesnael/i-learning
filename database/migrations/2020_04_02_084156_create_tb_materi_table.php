@@ -15,7 +15,7 @@ class CreateTbMateriTable extends Migration
     {
         Schema::create('tb_materi', function (Blueprint $table) {
             $table->id();
-            $table->integer('teacher_id');
+            $table->unsignedBigInteger('teacher_id');
             $table->string('judul_materi');
             $table->string('materi_url');
             $table->string('materi_mapel');
@@ -25,6 +25,10 @@ class CreateTbMateriTable extends Migration
             $table->integer('view_count');
             $table->timestamps();
             $table->datetime('deleted_at')->nullable();
+            $table->foreign('teacher_id')
+                    ->references('id')
+                    ->on('users')
+                    ->onDelete('cascade');
         });
     }
 

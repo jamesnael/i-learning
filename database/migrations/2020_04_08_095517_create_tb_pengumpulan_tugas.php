@@ -15,12 +15,20 @@ class CreateTbPengumpulanTugas extends Migration
     {
         Schema::create('tb_pengumpulan_tugas', function (Blueprint $table) {
             $table->id();
-            $table->integer('task_id');
-            $table->integer('student_id');
+            $table->unsignedBigInteger('task_id');
+            $table->unsignedBigInteger('student_id');
             $table->string('file_tugas')->nullable();
             $table->enum('status',['0','1'])->default('0')->nullable();
             $table->timestamps();
             $table->datetime('deleted_at')->nullable();
+            $table->foreign('task_id')
+                    ->references('id')
+                    ->on('tb_task')
+                    ->onDelete('cascade');
+            $table->foreign('student_id')
+                    ->references('id')
+                    ->on('users')
+                    ->onDelete('cascade');
         });
     }
 

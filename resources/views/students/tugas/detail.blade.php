@@ -42,7 +42,7 @@
 	                    				<form method="POST" action="{{ route('tugas-kirim') }}" enctype="multipart/form-data">
 	                    					{{ csrf_field() }}
 				                            <input type="hidden" name="id_tugas" value="{{ $tugas->id }}">
-		                    				<input type="file" class="btn btn-outline-primary btn-block" name="file_tugas">
+		                    				<input type="file" class="btn btn-outline-primary btn-block" name="file_tugas" required="">
 		                    				<button type="submit" class="btn btn-primary btn-block mt-4">Tandai Sebagai Selesai</button>
 	                    				</form>
 	                    			@else

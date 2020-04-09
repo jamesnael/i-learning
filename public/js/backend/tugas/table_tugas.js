@@ -95,7 +95,8 @@ var DatatableRemoteAjax = function() {
                         var id     = '<input type="hidden" id="id" value="' + row[1] + '">';
                         var btnE   = '<a href="'+ edit_ + '/' + row[1] +'" data-toggle="m-tooltip" data-placement="top" data-container="body" class="m-portlet__nav-link btn m-btn m-btn--hover-warning m-btn--icon m-btn--icon-only m-btn--pill edit" title="Edit Data" style="margin-top: 0;"><i class="fa fa-edit"></i></a>';
                         var btnD   = '<a data-toggle="m-tooltip" data-placement="top" data-container="body" class="m-portlet__nav-link btn m-btn m-btn--hover-danger m-btn--icon m-btn--icon-only m-btn--pill delete" title="Delete Data" style="margin-top: 0;"><i class="fa fa-trash"></i></a>';
-                        var button = id  + '' + '' + btnE + '' + btnD;
+                        var btnV   = '<button type="button" id="" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="modal" data-skin="dark" title="View Students" data-original-title="Detail" data-target="#Modal" data-id="'+ row[1] +'"><i class="fa fa-search"></i></button>'
+                        var button = id  + '' + '' + btnV + '' + btnE + '' + btnD;
                         return button;
                     },
                     "visible": true,
