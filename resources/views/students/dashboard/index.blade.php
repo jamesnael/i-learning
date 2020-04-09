@@ -35,7 +35,7 @@
 						    		Materi Terbaru
 								</h2>
 								<div class="ml-auto mr-5 pr-5">
-									<a class="m-link" href="#">
+									<a class="m-link" href="{{ route('materi-student') }}">
 										<h3 class="mt-5 pt-2" style="font-size : 16px;">
 								    		Lihat semua >
 										</h3>
@@ -63,7 +63,7 @@
 							    		Pembelajaran Untuk Kelas X
 									</h2>
 									<div class="ml-auto mr-5 pr-5">
-										<a class="m-link" href="#">
+										<a class="m-link" href="{{ route('materi-student') }}#m_tabs_2_2">
 											<h3 class="mt-5 pt-2" style="font-size : 16px;">
 									    		Lihat semua >
 											</h3>
@@ -92,7 +92,7 @@
 							    		Pembelajaran Untuk Kelas XI
 									</h2>
 									<div class="ml-auto mr-5 pr-5">
-										<a class="m-link" href="#">
+										<a class="m-link" href="{{ route('materi-student') }}#m_tabs_2_3">
 											<h3 class="mt-5 pt-2" style="font-size : 16px;">
 									    		Lihat semua >
 											</h3>
@@ -121,7 +121,7 @@
 							    		Pembelajaran Untuk Kelas XII
 									</h2>
 									<div class="ml-auto mr-5 pr-5">
-										<a class="m-link" href="#">
+										<a class="m-link" href="{{ route('materi-student') }}#m_tabs_2_4">
 											<h3 class="mt-5 pt-2" style="font-size : 16px;">
 									    		Lihat semua >
 											</h3>

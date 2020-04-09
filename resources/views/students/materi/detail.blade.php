@@ -35,7 +35,8 @@
                             <span>Share to : </span>
                             <a class="btn btn-secondary" href="https://www.facebook.com/sharer/sharer.php?u={{urlencode($url)}}" target="_blank"><i class="icofont-facebook"></i></a>
                             <a class="btn btn-secondary" href="https://twitter.com/intent/tweet?url={{urlencode($url)}}" target="_blank"><i class="ico icofont-twitter"></i></a>
-                            <a class="btn btn-secondary" href="#"><i class="icofont-whatsapp"></i></a>
+                            <a class="btn btn-secondary" href="https://wa.me/?text={{urlencode($url)}}" data-action="share/whatsapp/share" target="_blank"><i class="icofont-whatsapp"></i></a>
+
                             <hr>
                             <p style="text-align: justify;">{!! $materi->isi_materi !!}</p>
                         </div>

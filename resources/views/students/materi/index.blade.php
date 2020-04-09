@@ -22,84 +22,135 @@
             margin-top: -7px;
         }
 	</style>
-	<div class="m-portlet ">
+	<div class="m-portlet m-portlet--mobile delbot">
+    	<div class="m-portlet__head">
+			<div class="m-portlet__head-caption">
+				<div class="m-portlet__head-title">
+                    <h2 class="m-widget24__title" style="font-size : 20px;">
+                        <i class="flaticon-signs"></i> List Materi
+					</h2>
+				</div>
+			</div>
+		</div>
 		<div class="m-portlet__body  m-portlet__body--no-padding">
 			<div class="row m-row--no-padding m-row--col-separator-xl">
 				<div class="col-md-12">
 					<div class="m-widget24">					 
 					    <div class="m-widget24__item">
-							<div class="d-flex">
-						        <h2 class="m-widget24__title ml-5 pl-3" style="font-size : 20px;">
-						    		Materi Terbaru
-								</h2>
-							</div>
-							
-							<div class="mt-5">
-								<div class="d-flex">
-							        <h2 class="m-widget24__title ml-5 pl-4" style="font-size : 20px;">
-							    		Pembelajaran Untuk Kelas X
-									</h2>
-								</div>
-								<div class="container mt-3">
-									<div class="row">
-										@foreach($materi_x as $data)
-											<div class="col-md-4">
-										    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
-											    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
-											    	<div class="mt-3 ml-2">
-												    	<h5>{{ $data->judul_materi }}</h5>
-												        <p>Materi {{ $data->materi_mapel }} Kelas {{ $data->materi_kelas }}<br>{{ date('d F Y', strtotime($data->created_at)) }}</p>
-											    	</div>
-											    </a>
+							<ul class="nav nav-tabs mt-5" role="tablist">
+		                        <li class="nav-item">
+		                            <a class="nav-link {{ (Request::segment(2) == 'materi') ? 'active':'' }}" data-toggle="tab" href="#m_tabs_2_1">Materi Terpopuler</a>
+		                        </li>
+		                        <li class="nav-item">
+		                            <a class="nav-link {{ (Request::segment(2) == '#m_tabs_2_2') ? 'active':'' }}" data-toggle="tab" href="#m_tabs_2_2">Materi Kelas X</a>
+		                        </li>
+		                        <li class="nav-item">
+		                            <a class="nav-link {{ (Request::segment(3) == '#m_tabs_2_3') ? 'active':'' }}" data-toggle="tab" href="#m_tabs_2_3">Materi Kelas XI</a>
+		                        </li>
+		                        <li class="nav-item {{ (Request::segment(3) == '#m_tabs_2_4') ? 'active':'' }}">
+		                            <a class="nav-link" data-toggle="tab" href="#m_tabs_2_4">Materi Kelas XII</a>
+		                        </li>
+		                    </ul> 
+
+		                    <div class="tab-content">
+		                        <div class="tab-pane active" id="m_tabs_2_1" role="tabpanel">
+		                            <div class="mt-3">
+										<div class="d-flex">
+									        <h2 class="m-widget24__title ml-5 pl-4" style="font-size : 20px;">
+									    		List Materi Terpopuler
+											</h2>
+										</div>
+										<div class="container mt-3">
+											<div class="row">
+												@foreach($populer as $data)
+													<div class="col-md-4">
+												    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
+													    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
+													    	<div class="mt-3 ml-2">
+														    	<h5>{{ $data->judul_materi }}</h5>
+														    	<i class="fa fa-eye"></i> {{ $data->view_count }}
+														        <p>Materi {{ $data->materi_mapel }} Kelas {{ $data->materi_kelas }}<br>{{ date('d F Y', strtotime($data->created_at)) }}</p>
+													    	</div>
+													    </a>
+													</div>
+												@endforeach
 											</div>
-										@endforeach
+										</div>
 									</div>
-								</div>
-							</div>
-							<div class="mt-5">
-								<div class="d-flex">
-							        <h2 class="m-widget24__title ml-5 pl-4" style="font-size : 20px;">
-							    		Pembelajaran Untuk Kelas XI
-									</h2>
-								</div>
-								<div class="container mt-3">
-									<div class="row">
-										@foreach($materi_xi as $data)
-											<div class="col-md-4">
-										    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
-											    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
-											    	<div class="mt-3 ml-2">
-												    	<h5>{{ $data->judul_materi }}</h5>
-												        <p>Materi {{ $data->materi_mapel }} Kelas {{ $data->materi_kelas }}<br>{{ date('d F Y', strtotime($data->created_at)) }}</p>
-											    	</div>
-											    </a>
+		                        </div>
+		                        <div class="tab-pane" id="m_tabs_2_2" role="tabpanel">
+		                            <div class="mt-3">
+										<div class="d-flex">
+									        <h2 class="m-widget24__title ml-5 pl-4" style="font-size : 20px;">
+									    		Pembelajaran Untuk Kelas X
+											</h2>
+										</div>
+										<div class="container mt-3">
+											<div class="row">
+												@foreach($materi_x as $data)
+													<div class="col-md-4">
+												    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
+													    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
+													    	<div class="mt-3 ml-2">
+														    	<h5>{{ $data->judul_materi }}</h5>
+														        <p>Materi {{ $data->materi_mapel }} Kelas {{ $data->materi_kelas }}<br>{{ date('d F Y', strtotime($data->created_at)) }}</p>
+													    	</div>
+													    </a>
+													</div>
+												@endforeach
 											</div>
-										@endforeach
+										</div>
 									</div>
-								</div>
-							</div>
-							<div class="mt-5">
-								<div class="d-flex">
-							        <h2 class="m-widget24__title ml-5 pl-4" style="font-size : 20px;">
-							    		Pembelajaran Untuk Kelas XII
-									</h2>
-								</div>
-								<div class="container mt-3">
-									<div class="row">
-										@foreach($materi_xii as $data)
-											<div class="col-md-4">
-										    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
-											    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
-											    	<div class="mt-3 ml-2">
-												    	<h5>{{ $data->judul_materi }}</h5>
-												        <p>Materi {{ $data->materi_mapel }} Kelas {{ $data->materi_kelas }}<br>{{ date('d F Y', strtotime($data->created_at)) }}</p>
-											    	</div>
-											    </a>
+		                        </div>
+		                        <div class="tab-pane" id="m_tabs_2_3" role="tabpanel">
+		                        	<div class="mt-3">
+										<div class="d-flex">
+									        <h2 class="m-widget24__title ml-5 pl-4" style="font-size : 20px;">
+									    		Pembelajaran Untuk Kelas XI
+											</h2>
+										</div>
+										<div class="container mt-3">
+											<div class="row">
+												@foreach($materi_xi as $data)
+													<div class="col-md-4">
+												    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
+													    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
+													    	<div class="mt-3 ml-2">
+														    	<h5>{{ $data->judul_materi }}</h5>
+														        <p>Materi {{ $data->materi_mapel }} Kelas {{ $data->materi_kelas }}<br>{{ date('d F Y', strtotime($data->created_at)) }}</p>
+													    	</div>
+													    </a>
+													</div>
+												@endforeach
 											</div>
-										@endforeach
+										</div>
 									</div>
-								</div>
-							</div>
+		                        </div>
+		                        <div class="tab-pane" id="m_tabs_2_4" role="tabpanel">
+		                        	<div class="mt-3">
+										<div class="d-flex">
+									        <h2 class="m-widget24__title ml-5 pl-4" style="font-size : 20px;">
+									    		Pembelajaran Untuk Kelas XII
+											</h2>
+										</div>
+										<div class="container mt-3">
+											<div class="row">
+												@foreach($materi_xii as $data)
+													<div class="col-md-4">
+												    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
+													    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
+													    	<div class="mt-3 ml-2">
+														    	<h5>{{ $data->judul_materi }}</h5>
+														        <p>Materi {{ $data->materi_mapel }} Kelas {{ $data->materi_kelas }}<br>{{ date('d F Y', strtotime($data->created_at)) }}</p>
+													    	</div>
+													    </a>
+													</div>
+												@endforeach
+											</div>
+										</div>
+									</div>
+		                        </div>
+		                    </div>
 						</div>
 					</div>
 				<!--End::Timeline 3 -->
