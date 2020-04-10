@@ -111,6 +111,9 @@ Route::group(['middleware'=>'auth'],function(){
 		// Materi
 		Route::group(['prefix' => 'materi', 'as' => 'materi'],function(){
 			Route::get('/','MateriController@index')->name('-student');
+			Route::get('/kelas_x','MateriController@index')->name('-kelasx');
+			Route::get('/kelas_xi','MateriController@index')->name('-kelasxi');
+			Route::get('/kelas_xii','MateriController@index')->name('-kelasxii');
 			Route::get('/detail/{url}','MateriController@detail')->name('-detail');
 		});
 		//Student Profile

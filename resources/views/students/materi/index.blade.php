@@ -39,21 +39,21 @@
 					    <div class="m-widget24__item">
 							<ul class="nav nav-tabs mt-5" role="tablist">
 		                        <li class="nav-item">
-		                            <a class="nav-link {{ (Request::segment(2) == 'materi') ? 'active':'' }}" data-toggle="tab" href="#m_tabs_2_1">Materi Terpopuler</a>
+		                            <a class="nav-link {{ (Request::segment(2) == 'materi' && Request::segment(3) == '') ? 'active':'' }}" data-toggle="tab" href="#m_tabs_2_1">Materi Terpopuler</a>
 		                        </li>
 		                        <li class="nav-item">
-		                            <a class="nav-link {{ (Request::segment(2) == '#m_tabs_2_2') ? 'active':'' }}" data-toggle="tab" href="#m_tabs_2_2">Materi Kelas X</a>
+		                            <a class="nav-link {{ (Request::segment(3) == 'kelas_x') ? 'active':'' }}" data-toggle="tab" href="#m_tabs_2_2">Materi Kelas X</a>
 		                        </li>
 		                        <li class="nav-item">
-		                            <a class="nav-link {{ (Request::segment(3) == '#m_tabs_2_3') ? 'active':'' }}" data-toggle="tab" href="#m_tabs_2_3">Materi Kelas XI</a>
+		                            <a class="nav-link {{ (Request::segment(3) == 'kelas_xi') ? 'active':'' }}" data-toggle="tab" href="#m_tabs_2_3">Materi Kelas XI</a>
 		                        </li>
-		                        <li class="nav-item {{ (Request::segment(3) == '#m_tabs_2_4') ? 'active':'' }}">
+		                        <li class="nav-item {{ (Request::segment(3) == 'kelas_xii') ? 'active':'' }}">
 		                            <a class="nav-link" data-toggle="tab" href="#m_tabs_2_4">Materi Kelas XII</a>
 		                        </li>
 		                    </ul> 
 
 		                    <div class="tab-content">
-		                        <div class="tab-pane active" id="m_tabs_2_1" role="tabpanel">
+		                        <div class="tab-pane {{ (Request::segment(2) == 'materi' && Request::segment(3) == '') ? 'active':'' }}" id="m_tabs_2_1" role="tabpanel">
 		                            <div class="mt-3">
 										<div class="d-flex">
 									        <h2 class="m-widget24__title ml-5 pl-4" style="font-size : 20px;">
@@ -78,7 +78,7 @@
 										</div>
 									</div>
 		                        </div>
-		                        <div class="tab-pane" id="m_tabs_2_2" role="tabpanel">
+		                        <div class="tab-pane {{ (Request::segment(3) == 'kelas_x') ? 'active':'' }}" id="m_tabs_2_2" role="tabpanel">
 		                            <div class="mt-3">
 										<div class="d-flex">
 									        <h2 class="m-widget24__title ml-5 pl-4" style="font-size : 20px;">
@@ -102,7 +102,7 @@
 										</div>
 									</div>
 		                        </div>
-		                        <div class="tab-pane" id="m_tabs_2_3" role="tabpanel">
+		                        <div class="tab-pane {{ (Request::segment(3) == 'kelas_xi') ? 'active':'' }}" id="m_tabs_2_3" role="tabpanel">
 		                        	<div class="mt-3">
 										<div class="d-flex">
 									        <h2 class="m-widget24__title ml-5 pl-4" style="font-size : 20px;">
@@ -126,7 +126,7 @@
 										</div>
 									</div>
 		                        </div>
-		                        <div class="tab-pane" id="m_tabs_2_4" role="tabpanel">
+		                        <div class="tab-pane {{ (Request::segment(3) == 'kelas_xii') ? 'active':'' }}" id="m_tabs_2_4" role="tabpanel">
 		                        	<div class="mt-3">
 										<div class="d-flex">
 									        <h2 class="m-widget24__title ml-5 pl-4" style="font-size : 20px;">
