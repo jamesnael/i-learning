@@ -21,14 +21,16 @@ class MateriController extends Controller
         $materi_x   = Materi::where('materi_kelas','X')->latest()->get();
         $materi_xi  = Materi::where('materi_kelas','XI')->latest()->get();
         $materi_xii = Materi::where('materi_kelas','XII')->latest()->get();
+        $populer    = Materi::orderBy('view_count','DESC')->take(10)->get();
 
         return view('students.materi.index')->with([
-            'page'      => $this,
+            'page'       => $this,
             'materi'     => $materi,
             'materi_x'   => $materi_x,
             'materi_xi'  => $materi_xi,
             'materi_xii' => $materi_xii,
-                
+            'populer'    => $populer,
+
             $this->breadcrumbs = [
                 ['url' => '', 'title' =>'Materi'],
             ],
