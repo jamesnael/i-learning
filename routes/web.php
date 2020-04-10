@@ -113,6 +113,10 @@ Route::group(['middleware'=>'auth'],function(){
 			Route::get('/','MateriController@index')->name('-student');
 			Route::get('/detail/{url}','MateriController@detail')->name('-detail');
 		});
+		// Contact Us
+		Route::group(['prefix' => 'contactus', 'as' => 'contactus'], function(){
+			Route::get('/','ContactusController@index')->name('-student');
+		});
 		//Student Profile
 		Route::group(['prefix'=>'user-profile'],function(){
 			Route::get('/', 'ProfileController@index')->name('student-profile');
