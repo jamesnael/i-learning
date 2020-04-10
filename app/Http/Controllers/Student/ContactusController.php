@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Student;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Contact;
+use DB;
+use File;
 
 class ContactusController extends Controller
 {
@@ -14,7 +17,16 @@ class ContactusController extends Controller
      */
     public function index()
     {
-        return view('students.contactus.index');
+        return view('students.contactus.index')->with([
+            'page'      => $this,
+            
+            $this->breadcrumbs = [
+                [
+                    'url'      => '', 
+                    'title'    =>'Contact Us'
+                ],
+            ],
+        ]);
     }
 
     /**
@@ -35,7 +47,9 @@ class ContactusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $contact = Contact::create($request->all());
+        return redirect()->back()->with('alert','Success!')->with('message','Success send a message.');
+
     }
 
     /**

@@ -37,16 +37,25 @@
 								<a href="{{ route('materi-student') }}" class="m-nav__link m-dropdown__toggle">
 									<span class="m-nav__link-icon"><span class="m-nav__link-icon-wrapper">Materi</span></span>
 								</a>
+								@if(Request::segment(2) == 'materi')
+                                    <hr width="70%" align="center" style="border: none; height:2px; color:#fff; background-color:#fff;margin-top:-15px">
+                                @endif
 							</li>
 							<li class="m-nav__item m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center m-dropdown--mobile-full-width m-dropdown--skin-light	m-list-search m-list-search--skin-light" >
 								<a href="{{ route('tugas-student') }}" class="m-nav__link m-dropdown__toggle">
 									<span class="m-nav__link-icon"><span class="m-nav__link-icon-wrapper">Tugas Siswa</span></span>
 								</a>
+								@if(Request::segment(2) == 'tugas')
+                                    <hr width="70%" align="center" style="border: none; height:2px; color:#fff; background-color:#fff;margin-top:-15px">
+                                @endif
 							</li>
 							<li class="m-nav__item m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center m-dropdown--mobile-full-width m-dropdown--skin-light	m-list-search m-list-search--skin-light" >
 								<a href="{{ route('contactus-student') }}" class="m-nav__link m-dropdown__toggle">
 									<span class="m-nav__link-icon"><span class="m-nav__link-icon-wrapper">Contact Us</span></span>
 								</a>
+								@if(Request::segment(2) == 'contact_us')
+                                    <hr width="70%" align="center" style="border: none; height:2px; color:#fff; background-color:#fff;margin-top:-15px">
+                                @endif
 							</li>
 						</ul>
 						<ul class="m-topbar__nav m-nav m-nav--inline">
