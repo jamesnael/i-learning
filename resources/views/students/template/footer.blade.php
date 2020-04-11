@@ -13,8 +13,8 @@
 						</a>
 					</li>
 					<li class="m-nav__item">
-						<a href="#"  class="m-nav__link">
-							<span class="m-nav__link-text">Privacy</span>
+						<a href="{{ route('contactus-student') }}" class="m-nav__link">
+							<span class="m-nav__link-text">Contact us</span>
 						</a>
 					</li>
 					<li class="m-nav__item">
