@@ -18,7 +18,9 @@
 		<div class="m-portlet__body  m-portlet__body--no-padding">
 			<div class="row m-row--no-padding m-row--col-separator-xl">
                 <div class="col-md-12 p-4">
-                    <h5 class="my-3 mx-3"><a href="#" style="text-decoration: underline;">There is <span class="m-badge m-badge--danger m-badge--wide" style="font-weight: 600">  4  </span> students have doing your new task!</a></h5>
+                	@if(!empty($total_done))
+	                    <h5 class="my-3 mx-3"><a href="#" style="text-decoration: underline;">There is <span class="m-badge m-badge--danger m-badge--wide" style="font-weight: 600">  {{ $total_done }}  </span> students have doing your new task!</a></h5>
+                	@endif
                 </div>
             </div>
 		</div>

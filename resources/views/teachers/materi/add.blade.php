@@ -37,9 +37,6 @@
 							<option>Matematika</option>
 							<option>B.Indonesia</option>
 							<option>B.Inggris</option>
-							<option>B.Sunda</option>
-							<option>PPKN</option>
-							<option>Fisika</option>
 							<option>Produktif</option>
 						</select>
 					</div>

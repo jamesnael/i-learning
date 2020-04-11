@@ -66,6 +66,17 @@ class MateriController extends Controller
             $data->view_count   = '0';
             $data->teacher_id   = Auth::user()->id;
 
+            //Thumbnail Image
+            if($request->materi_mapel == 'Matematika'){
+                $data->thumbnail_image = 'mtk.png';
+            }elseif($request->materi_mapel == 'B.Indonesia'){
+                $data->thumbnail_image = 'bindo.png';
+            }elseif($request->materi_mapel == 'B.Inggris'){
+                $data->thumbnail_image = 'inggris.png';
+            }elseif($request->materi_mapel == 'Produktif'){
+                $data->thumbnail_image = 'prod.png';
+            }
+
             /* Write log */
             $data_notif = array(
                 "Judul Materi"       => $request->judul_materi,
@@ -151,6 +162,17 @@ class MateriController extends Controller
             $data->materi_kelas = $request->materi_kelas;
             $data->isi_materi   = $request->isi_materi;
 
+            //Thumbnail Image
+            if($request->materi_mapel == 'Matematika'){
+                $data->thumbnail_image = 'mtk.png';
+            }elseif($request->materi_mapel == 'B.Indonesia'){
+                $data->thumbnail_image = 'bindo.png';
+            }elseif($request->materi_mapel == 'B.Inggris'){
+                $data->thumbnail_image = 'inggris.png';
+            }elseif($request->materi_mapel == 'Produktif'){
+                $data->thumbnail_image = 'prod.png';
+            }
+            
             /* Array Log */
             $data_new = array(
                 "Judul Materi"       => $request->judul_materi,

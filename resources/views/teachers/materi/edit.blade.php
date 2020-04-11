@@ -38,9 +38,6 @@
 							<option {{ ($data->materi_mapel == 'Matematika') ? 'selected':'' }}>Matematika</option>
 							<option {{ ($data->materi_mapel == 'B.Indonesia') ? 'selected':'' }}>B.Indonesia</option>
 							<option {{ ($data->materi_mapel == 'B.Inggris') ? 'selected':'' }}>B.Inggris</option>
-							<option {{ ($data->materi_mapel == 'B.Sunda') ? 'selected':'' }}>B.Sunda</option>
-							<option {{ ($data->materi_mapel == 'PPKN') ? 'selected':'' }}>PPKN</option>
-							<option {{ ($data->materi_mapel == 'Fisika') ? 'selected':'' }}>Fisika</option>
 							<option {{ ($data->materi_mapel == 'Produktif') ? 'selected':'' }}>Produktif</option>
 						</select>
 					</div>

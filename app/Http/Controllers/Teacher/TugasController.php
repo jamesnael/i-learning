@@ -300,6 +300,7 @@ class TugasController extends Controller
                             <th>Photo</th>
                             <th>Students Name</th>
                             <th>Status</th>
+                            <th class='text-center'>File</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -313,6 +314,7 @@ class TugasController extends Controller
                             echo"
                             <td class='align-middle'>".$data->user->name."</td>
                             <td class='align-middle'><label class='text-success'>Finished</label></td>
+                            <td class='align-middle text-center'><a href='../files/pengumpulan_tugas/".$data->file_tugas."'><i class='fa fa-download'></i></a></td>
                         </tr>
                     </tbody>
                     ";

@@ -47,7 +47,7 @@
 									@foreach($materi as $data)
 									    <div class="item">
 									    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
-										    	<img src="{{ asset('images/contoh_1.jpg') }}">
+										    	<img src="{{ asset('images/materi/'. $data->thumbnail_image) }}">
 										    	<div class="mt-3 ml-2">
 											    	<h5>{{ $data->judul_materi }}</h5>
 											        <p>Materi {{ $data->materi_mapel }} Kelas {{ $data->materi_kelas }}<br>{{ date('d F Y', strtotime($data->created_at)) }}</p>
@@ -75,7 +75,7 @@
 										@foreach($materi_x as $data)
 											<div class="col-md-4">
 										    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
-											    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
+											    	<img src="{{ asset('images/materi/'. $data->thumbnail_image) }}" width="100%">
 											    	<div class="mt-3 ml-2">
 												    	<h5>{{ $data->judul_materi }}</h5>
 												        <p>Materi {{ $data->materi_mapel }} Kelas {{ $data->materi_kelas }}<br>{{ date('d F Y', strtotime($data->created_at)) }}</p>
@@ -104,7 +104,7 @@
 										@foreach($materi_xi as $data)
 											<div class="col-md-4">
 										    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
-											    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
+											    	<img src="{{ asset('images/materi/'. $data->thumbnail_image) }}" width="100%">
 											    	<div class="mt-3 ml-2">
 												    	<h5>{{ $data->judul_materi }}</h5>
 												        <p>Materi {{ $data->materi_mapel }} Kelas {{ $data->materi_kelas }}<br>{{ date('d F Y', strtotime($data->created_at)) }}</p>
@@ -133,7 +133,7 @@
 										@foreach($materi_xii as $data)
 											<div class="col-md-4">
 										    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
-											    	<img src="{{ asset('images/contoh_1.jpg') }}" width="100%">
+											    	<img src="{{ asset('images/materi/'. $data->thumbnail_image) }}" width="100%">
 											    	<div class="mt-3 ml-2">
 												    	<h5>{{ $data->judul_materi }}</h5>
 												        <p>Materi {{ $data->materi_mapel }} Kelas {{ $data->materi_kelas }}<br>{{ date('d F Y', strtotime($data->created_at)) }}</p>

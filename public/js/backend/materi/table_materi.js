@@ -89,7 +89,7 @@ var DatatableRemoteAjax = function() {
                 },
                 {
                     "render": function(data, type, row) {
-                        return '<i class="fa fa-eye"></i> <b>' + row[7] ;
+                        return '<i class="fa fa-eye"></i> ' + row[7] ;
                     },
                     "visible": true
                 },

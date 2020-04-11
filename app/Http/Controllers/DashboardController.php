@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Materi;
+use App\Models\PengumpulanTugas;
 use App\Models\Tugas;
 use App\User;
 
@@ -19,7 +20,7 @@ class DashboardController extends Controller
     {
         //Dashboard Admin
         $total_student  = User::where('role','student')->count();
-        $total_teacher  = User::where('role','student')->count();
+        $total_teacher  = User::where('role','teacher')->count();
         $total_learning = Materi::count();
 
         //Dashboard Students
@@ -27,6 +28,12 @@ class DashboardController extends Controller
         $materi_x   = Materi::where('materi_kelas','X')->latest()->take(3)->get();
         $materi_xi  = Materi::where('materi_kelas','XI')->latest()->take(3)->get();
         $materi_xii = Materi::where('materi_kelas','XII')->latest()->take(3)->get();
+
+        //Dashboard Teachers
+        $tugas = Tugas::latest()->take(1)->get();
+        foreach($tugas as $data){
+            $total_done  = PengumpulanTugas::where('task_id', $data->id)->where('status', '1')->count();
+        }
 
         $userRole = Auth::user()->role;
 
@@ -40,7 +47,8 @@ class DashboardController extends Controller
             ]);
         }elseif ($userRole == "teacher"){
             return view('teachers.dashboard.index')->with([
-                'page'      => $this,
+                'page'       => $this,
+                'total_done' => $total_done,
                 
                 $this->breadcrumbs = [
                     ['url' => '', 'title' =>'Dashboard Teachers'],
