@@ -265,7 +265,7 @@ class TugasController extends Controller
         $row          = array('id' ,'judul_tugas', 'tugas_url' ,'tugas_mapel' ,'tugas_kelas' , 'isi_tugas', 'deadline_tugas' , 'file_tugas' , 'created_at');
         $row_search   = array('id' ,'judul_tugas', 'tugas_url' ,'tugas_mapel' ,'tugas_kelas' , 'isi_tugas', 'deadline_tugas' , 'file_tugas' , 'created_at');
         $join         = "";
-        $order        = "";
+        $order        = "created_at";
         $groupby      = "";
         $limit        = "";
         $offset       = "";
