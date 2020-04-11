@@ -30,6 +30,7 @@ class DashboardController extends Controller
         $materi_xii = Materi::where('materi_kelas','XII')->latest()->take(3)->get();
 
         //Dashboard Teachers
+        $total_done = "";
         $tugas = Tugas::latest()->take(1)->get();
         foreach($tugas as $data){
             $total_done  = PengumpulanTugas::where('task_id', $data->id)->where('status', '1')->count();
