@@ -13,13 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 // Auth::routes();
-Route::get('auth', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('auth', 'Auth\LoginController@login')->name('sign-in');
+Route::get('/', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('/', 'Auth\LoginController@login')->name('sign-in');
 Route::post('register', 'Auth\RegisterController@register')->name('register');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 
@@ -119,6 +115,7 @@ Route::group(['middleware'=>'auth'],function(){
 		// Contact Us
 		Route::group(['prefix' => 'contactus', 'as' => 'contactus'], function(){
 			Route::get('/','ContactusController@index')->name('-student');
+			Route::post('/storeMessage','ContactusController@store')->name('-add');
 		});
 		//Student Profile
 		Route::group(['prefix'=>'user-profile'],function(){
