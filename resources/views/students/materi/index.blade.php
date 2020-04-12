@@ -15,11 +15,12 @@
 			color: #6167e6 !important;
 		}
         .col-md-4{
+			margin-top: 40px;
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-            transition:0.4s;
+            transition:0.6s;
         }
         .col-md-4:hover{
-            margin-top: -7px;
+            margin-top: -3px;
         }
 	</style>
 	<div class="m-portlet m-portlet--mobile delbot">
@@ -88,7 +89,7 @@
 										<div class="container mt-3">
 											<div class="row">
 												@foreach($materi_x as $data)
-													<div class="col-md-4">
+													<div class="0">
 												    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
 													    	<img src="{{ asset('images/materi/'. $data->thumbnail_image) }}" width="100%">
 													    	<div class="mt-3 ml-2">
@@ -112,7 +113,7 @@
 										<div class="container mt-3">
 											<div class="row">
 												@foreach($materi_xi as $data)
-													<div class="col-md-4">
+													<div class="0">
 												    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
 													    	<img src="{{ asset('images/materi/'. $data->thumbnail_image) }}" width="100%">
 													    	<div class="mt-3 ml-2">
@@ -136,7 +137,7 @@
 										<div class="container mt-3">
 											<div class="row">
 												@foreach($materi_xii as $data)
-													<div class="col-md-4">
+													<div class="0">
 												    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
 													    	<img src="{{ asset('images/materi/'. $data->thumbnail_image) }}" width="100%">
 													    	<div class="mt-3 ml-2">
