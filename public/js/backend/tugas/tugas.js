@@ -155,11 +155,13 @@ function limitCharacter(event)
 }
 
 jQuery(document).ready(function() {
-    $("#deadline_tugas").datepicker({
-        todayBtn:  1,
-        autoclose: true,
-        format :'dd MM yyyy',
-        clearBtn: true,
+    $('#deadline_tugas').datetimepicker({
+        showSecond: true,
+        dateFormat: 'dd/mm/yy',
+        timeFormat: 'hh:mm:ss',
+        stepHour: 2,
+        stepMinute: 10,
+        stepSecond: 10
     });
 
     $("#end_date").datepicker({

@@ -8,12 +8,12 @@
                     <div class="m-widthget 24">
                         <div class="m-widget24__item"><br>
                             <div class="d-flex">
-                                <h2 class="m-widget24__title mt-3 ml-5 pl-3" style="font-size : 20px;">
+                                <h2 class="m-widget24__title mt-3 ml-5 pl-4" style="font-size : 20px;">
                                     SEND US A MESSAGE
                                     <hr width="45%" align="left" style="border: none; height:2px; color:#333; background-color:#333;">
                                 </h2>
                                 <div class="ml-auto mr-auto">
-                                    <h2 class="m-widget24__title mt-3 ml-5 pl-5" style="font-size : 20px;margin-right:-20px">
+                                    <h2 class="m-widget24__title mt-3 ml-5 pl-5" style="font-size : 20px;margin-right:-40px">
                                         OUR LOCATION
                                         <hr width="45%" align="left" style="border: none; height:2px; color:#333; background-color:#333;">
                                     </h2>
@@ -26,27 +26,27 @@
                                     <form action="{{ route('contactus-add') }}" method="POST" enctype="multipart/form-data">
                                         {{ csrf_field() }}
                                         <div class="form-group m-form__group">
-                                            <label for="name">Name</label>
+                                            <label for="name"><strong>Name</strong></label>
                                             <input class="form-control m-input" type="text" name="name" placeholder="Enter your name"  autocomplete="off" required="" />
                                         </div>
                                         <div class="form-group m-form__group">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <label for="email">Email</label>
+                                                    <label for="email"><strong>Email</strong></label>
                                                     <input class="form-control m-input" type="email" name="email" placeholder="Enter your email address" autocomplete="off" required="" />
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <label for="phone_number">Phone Number</label>
+                                                    <label for="phone_number"><strong>Phone Number</strong></label>
                                                     <input class="form-control m-input" type="number" name="phone_number" placeholder="Enter your phone number" autocomplete="off" required="" />
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group m-form__group">
-                                            <label for="subject">Subject</label>
+                                            <label for="subject"><strong>Subject</strong></label>
                                             <input class="form-control m-input" type="text" name="subject" placeholder="Enter your subject" autocomplete="off" required="" />
                                         </div>
                                         <div class="form-group m-form__group">
-                                            <label for="message">Message</label>
+                                            <label for="message"><strong>Message</strong></label>
                                             <textarea class="form-control m-input" name="message" id="" placeholder="Enter your message" cols="30" rows="5" autocomplete="off" required="" ></textarea>
                                         </div>
                                         <button class="btn btn-primary btn-block">SEND MESSAGE</button>

@@ -76,7 +76,7 @@ class TugasController extends Controller
             $data->tugas_mapel    = $request->tugas_mapel;
             $data->tugas_kelas    = $request->tugas_kelas;
             $data->isi_tugas      = $request->isi_tugas;
-            $data->deadline_tugas = date('y-m-d', strtotime($request->deadline_tugas));
+            $data->deadline_tugas = date('Y-m-d h:i:s', strtotime($request->deadline_tugas));
             $data->file_tugas     = $fileName;
             $data->teacher_id     = Auth::user()->id;
 
@@ -86,7 +86,7 @@ class TugasController extends Controller
                 "Mapel Tugas"       => $request->tugas_mapel,
                 "Tugas Untuk Kelas" => $request->tugas_kelas,
                 "Isi Tugas"         => $request->isi_tugas,
-                "Deadline Tugas"    => date('d F Y', strtotime($request->deadline_tugas)),
+                "Deadline Tugas"    => date('d F Y h:i:s', strtotime($request->deadline_tugas)),
                 "File Tugas"        => $fileName,
             );
 
@@ -187,7 +187,7 @@ class TugasController extends Controller
             $data->tugas_mapel    = $request->tugas_mapel;
             $data->tugas_kelas    = $request->tugas_kelas;
             $data->isi_tugas      = $request->isi_tugas;
-            $data->deadline_tugas = date('y-m-d', strtotime($request->deadline_tugas));
+            $data->deadline_tugas = date('Y-m-d h:i:s', strtotime($request->deadline_tugas));
             $data->file_tugas     = $fileName;
 
             /* Array Log */
@@ -196,7 +196,7 @@ class TugasController extends Controller
                 "Mapel Tugas"       => $request->tugas_mapel,
                 "Tugas Untuk Kelas" => $request->tugas_kelas,
                 "Isi Tugas"         => $request->isi_tugas,
-                "Deadline Tugas"    => date('d F Y', strtotime($request->deadline_tugas)),
+                "Deadline Tugas"    => date('d F Y h:i:s', strtotime($request->deadline_tugas)),
                 "File Tugas"        => $fileName,
             );
             /* End Array Log */
@@ -242,7 +242,7 @@ class TugasController extends Controller
                 "Mapel Tugas"       => $tugas->tugas_mapel,
                 "Tugas Untuk Kelas" => $tugas->tugas_kelas,
                 "Isi Tugas"         => $tugas->isi_tugas,
-                "Deadline Tugas"    => date('d F Y', strtotime($tugas->deadline_tugas)),                
+                "Deadline Tugas"    => date('d F Y h:i:s', strtotime($tugas->deadline_tugas)),                
                 "File Tugas"        => $tugas->file_tugas,
             );
 

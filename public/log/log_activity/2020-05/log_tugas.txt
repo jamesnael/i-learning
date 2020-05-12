@@ -1,0 +1,1 @@
+id|actor|role|menu|data_new|data_old|data_change|message|activity|created_on|%|1|Teachers|teacher|Tugas|{"Judul Tugas":"B.Indonesia","Mapel Tugas":"B.Indonesia","Tugas Untuk Kelas":"XII","Isi Tugas":"<p>A<\/p>","Deadline Tugas":"12 May 2020 10:20:00","File Tugas":""}|||Success add new tugas with name B.Indonesia|Save|2020-05-12 10:14:40

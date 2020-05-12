@@ -17,11 +17,6 @@
 							<span class="m-nav__link-text">Privacy</span>
 						</a>
 					</li>
-					<li class="m-nav__item">
-						<a href="#" class="m-nav__link">
-							<span class="m-nav__link-text">T&C</span>
-						</a>
-					</li>
 					<li class="m-nav__item m-nav__item--last">
 						<a href="#" class="m-nav__link" data-toggle="m-tooltip" title="Support Center" data-placement="left">
 							<i class="m-nav__link-icon flaticon-info m--icon-font-size-lg3"></i>

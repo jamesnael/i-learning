@@ -20,7 +20,7 @@
                             <p>Tugas {{ $tugas->tugas_mapel }} Kelas {{ $tugas->tugas_kelas }}</p>
                             <p>From : {{ $tugas->teacher->name }}</p>
                             <p><i class="fa fa-calendar-alt"></i> {{ date('d F Y', strtotime($tugas->created_at)) }}</p>
-                            <p>Tenggat : {{ date('d F Y', strtotime($tugas->deadline_tugas)) }}</p>
+                            <p>Tenggat : {{ date('d F Y h:i:s', strtotime($tugas->deadline_tugas)) }}</p>
                             <hr>
                             {!! $tugas->isi_tugas !!}
                             @if(!empty($tugas->file_tugas))
@@ -57,6 +57,30 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header"></div>
+                <div class="modal-body">
+                    <h5 align="center"><b>Information</b></h5>
+                    <p align="center" class="mt-3">Tugas ini telah melewati waktu tenggat dan Tidak bisa diakses kembali saat ini.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="{{ route('tugas-student') }}" class="btn btn-danger">Ok</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    @php
+        date_default_timezone_set('Asia/Jakarta');
+    @endphp
+    @if($tugas->deadline_tugas <= date('Y-m-d h:i:s'))
+        <script type="text/javascript">
+            $(window).on('load',function(){
+                $('#myModal').modal('show');
+            });
+        </script>
+    @endif
 @endsection
 @section('script')
 	<script type="text/javascript">

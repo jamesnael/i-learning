@@ -15,12 +15,11 @@
 			color: #6167e6 !important;
 		}
         .col-md-4{
-			margin-top: 40px;
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-            transition:0.6s;
+            transition:0.4s;
         }
         .col-md-4:hover{
-            margin-top: -3px;
+            margin-top: -7px;
         }
 	</style>
 	<div class="m-portlet m-portlet--mobile delbot">
@@ -66,7 +65,7 @@
 												@foreach($populer as $data)
 													<div class="col-md-4">
 												    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
-													    	<img src="{{ asset('images/materi/'. $data->thumbnail_image) }}" width="100%">
+													    	<img src="{{ asset('images/materi/'. $data->thumbnail_image) }}" width="100%" class="mt-2">
 													    	<div class="mt-3 ml-2">
 														    	<h5>{{ $data->judul_materi }}</h5>
 														    	<i class="fa fa-eye"></i> {{ $data->view_count }}
@@ -74,6 +73,10 @@
 													    	</div>
 													    </a>
 													</div>
+													@if ($loop->iteration % 3 == 0)
+											            </div>
+											            <div class="row" style="margin-top: 30px;">
+											        @endif
 												@endforeach
 											</div>
 										</div>
@@ -89,15 +92,19 @@
 										<div class="container mt-3">
 											<div class="row">
 												@foreach($materi_x as $data)
-													<div class="0">
+													<div class="col-md-4">
 												    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
-													    	<img src="{{ asset('images/materi/'. $data->thumbnail_image) }}" width="100%">
+													    	<img src="{{ asset('images/materi/'. $data->thumbnail_image) }}" width="100%" class="mt-2">
 													    	<div class="mt-3 ml-2">
 														    	<h5>{{ $data->judul_materi }}</h5>
 														        <p>Materi {{ $data->materi_mapel }} Kelas {{ $data->materi_kelas }}<br>{{ date('d F Y', strtotime($data->created_at)) }}</p>
 													    	</div>
 													    </a>
 													</div>
+													@if ($loop->iteration % 3 == 0)
+											            </div>
+											            <div class="row" style="margin-top: 30px;">
+											        @endif
 												@endforeach
 											</div>
 										</div>
@@ -113,15 +120,19 @@
 										<div class="container mt-3">
 											<div class="row">
 												@foreach($materi_xi as $data)
-													<div class="0">
+													<div class="col-md-4">
 												    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
-													    	<img src="{{ asset('images/materi/'. $data->thumbnail_image) }}" width="100%">
+													    	<img src="{{ asset('images/materi/'. $data->thumbnail_image) }}" width="100%" class="mt-2">
 													    	<div class="mt-3 ml-2">
 														    	<h5>{{ $data->judul_materi }}</h5>
 														        <p>Materi {{ $data->materi_mapel }} Kelas {{ $data->materi_kelas }}<br>{{ date('d F Y', strtotime($data->created_at)) }}</p>
 													    	</div>
 													    </a>
 													</div>
+													@if ($loop->iteration % 3 == 0)
+											            </div>
+											            <div class="row" style="margin-top: 30px;">
+											        @endif
 												@endforeach
 											</div>
 										</div>
@@ -137,15 +148,19 @@
 										<div class="container mt-3">
 											<div class="row">
 												@foreach($materi_xii as $data)
-													<div class="0">
+													<div class="col-md-4">
 												    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
-													    	<img src="{{ asset('images/materi/'. $data->thumbnail_image) }}" width="100%">
+													    	<img src="{{ asset('images/materi/'. $data->thumbnail_image) }}" width="100%" class="mt-2">
 													    	<div class="mt-3 ml-2">
 														    	<h5>{{ $data->judul_materi }}</h5>
 														        <p>Materi {{ $data->materi_mapel }} Kelas {{ $data->materi_kelas }}<br>{{ date('d F Y', strtotime($data->created_at)) }}</p>
 													    	</div>
 													    </a>
 													</div>
+													@if ($loop->iteration % 3 == 0)
+											            </div>
+											            <div class="row" style="margin-top: 30px;">
+											        @endif
 												@endforeach
 											</div>
 										</div>

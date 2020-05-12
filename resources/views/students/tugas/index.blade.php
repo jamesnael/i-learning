@@ -33,7 +33,7 @@
                 <div class="container">
                     <div class="row mx-2 my-5">
                         @if($tugas == '[]')
-                            <h4>- Belum ada tugas</h4>
+                            <h4>- Belum ada tugas untuk saat ini</h4>
                         @else
                             @foreach($tugas as $data)
                                 <div class="col-sm-4">
@@ -54,7 +54,7 @@
                                                 </div>
                                                 <p class="card-text">{{ $data->teacher->name }}</p>
                                                 <button type="button" readonly="" class="btn btn-primary">Tugas {{ $data->tugas_mapel }}</button>
-                                                <p class="text-right">{{ date('d F Y', strtotime($data->created_at)) }}</p>
+                                                <p class="text-right">{{ date('d F Y', strtotime($data->deadline_tugas)) }}</p>
                                             </div>
                                         </div>
                                     </a>

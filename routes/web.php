@@ -60,6 +60,8 @@ Route::group(['middleware'=>'auth'],function(){
 			Route::post('/changePassword', 'ProfileController@update_password')->name('teacher-change-password');
 		});
 	});
+
+	//Admin
 	Route::group(['prefix' => 'admin', 'namespace' => 'admin'],function(){
 		//Activity log
 		Route::group(['prefix'=>'activity-log'],function(){
@@ -97,6 +99,8 @@ Route::group(['middleware'=>'auth'],function(){
 			Route::get('/jsonContact', 'ContactController@jsonContact')->name('-json'); 
 		});
 	});
+
+	//Siswa
 	Route::group(['prefix' => 'student', 'namespace' => 'student'], function(){
 		//Tugas
 		Route::group(['prefix' => 'tugas', 'as' => 'tugas'],function(){

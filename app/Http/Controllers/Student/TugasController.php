@@ -18,7 +18,8 @@ class TugasController extends Controller
      */
     public function index()
     {
-        $tugas = Tugas::where('tugas_kelas', \Auth::user()->kelas)->orderBy('created_at', 'DESC')->get();
+        date_default_timezone_set('Asia/Jakarta');
+        $tugas = Tugas::where('tugas_kelas', \Auth::user()->kelas)->where('deadline_tugas', '>=' ,date('Y-m-d h:i:s'))->orderBy('created_at', 'DESC')->get();
         return view('students.tugas.index', compact('tugas'))->with([
             'page'      => $this,
             
