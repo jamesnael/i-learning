@@ -1,12 +1,12 @@
 @extends('teachers.template.master')
 
 @section('content')
-	<div class="m-portlet ">
+	<div class="m-portlet">
 		<div class="m-portlet__head">
 	        <div class="m-portlet__head-caption">
 	            <div class="m-portlet__head-title">
 	                <span class="m-portlet__head-icon">
-	                    <i class="  flaticon-alert-2"></i>
+	                    <i class="flaticon-alert-2"></i>
 	                </span>
 	                <h3 class="m-portlet__head-text">
 	                    Notifications
@@ -18,9 +18,12 @@
 		<div class="m-portlet__body  m-portlet__body--no-padding">
 			<div class="row m-row--no-padding m-row--col-separator-xl">
                 <div class="col-md-12 p-4">
-                	<h5 class="my-3 mx-3">Welcome back, {{ Auth::user()->name }}</h5>
+                	<!-- <h5 class="my-3 mx-3">Welcome back, {{ Auth::user()->name }}</h5> -->
                 	@if(!empty($total_done))
-	                    <h5 class="my-3 mx-3"><a href="{{ route('tugas') }}" style="text-decoration: underline;">There is <span class="m-badge m-badge--danger m-badge--wide" style="font-weight: 600">  {{ $total_done }}  </span> students have doing your new task!</a></h5>
+	                    <h5 class="my-3 mx-3">
+	                    	<a href="{{ route('tugas') }}" class="btn btn-outline-primary" style="text-decoration: none;">There is <span class="m-badge m-badge--danger m-badge--wide" style="font-weight: 600"> {{ $total_done }} </span> students have doing your newest task!
+	                    	</a>
+	                    </h5>
                 	@endif
                 </div>
             </div>

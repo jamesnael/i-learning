@@ -7,7 +7,7 @@
 				<div class="m-stack m-stack--ver m-stack--general m-stack--fluid">
 					<div class="m-stack__item m-stack__item--middle m-brand__logo">
 						<a href="{{ route('dashboard') }}" class="m-brand__logo-wrapper" style="color:white">
-							<img alt="" width="90" class="ml-4" src="{{ asset('images/ilearning.png') }}"  />
+							<img alt="" width="80" class="ml-4" src="{{ asset('images/ilearning.png') }}"  />
 							<!-- <h5>Event Registration</h5> -->
 						</a>  
 					</div>
@@ -33,6 +33,14 @@
 				<div id="m_header_topbar" class="m-topbar m-stack m-stack--ver m-stack--general">
 					<div class="m-stack__item m-topbar__nav-wrapper">
 						<ul class="m-topbar__nav m-nav m-nav--inline">
+							<li class="m-nav__item m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center m-dropdown--mobile-full-width m-dropdown--skin-light" >
+								<a href="{{ route('dashboard') }}" class="m-nav__link m-dropdown__toggle">
+									<span class="m-nav__link-icon"><span class="m-nav__link-icon-wrapper">Home</span></span>
+								</a>
+								@if(Request::segment(1) == 'dashboard')
+                                    <hr width="70%" align="center" style="border: none; height:2px; color:#fff; background-color:#fff;margin-top:-15px">
+                                @endif
+							</li>
 							<li class="m-nav__item m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center m-dropdown--mobile-full-width m-dropdown--skin-light" >
 								<a href="{{ route('materi-student') }}" class="m-nav__link m-dropdown__toggle">
 									<span class="m-nav__link-icon"><span class="m-nav__link-icon-wrapper">Materi</span></span>

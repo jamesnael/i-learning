@@ -202,6 +202,16 @@ class TugasController extends Controller
             /* End Array Log */
 
             $data->save();
+            $student = User::where('role', 'student')->where('kelas', $request->tugas_kelas)->get();
+            foreach($student as $students)
+            {
+                PengumpulanTugas::firstOrCreate([
+                    'student_id' => $students->id,
+                    'task_id'    => $data->id,
+                    'status'     => '0'
+                ]);
+            }
+
             DB::commit();
 
             /* Write Log */

@@ -42,7 +42,7 @@
 									</a>
 								</div>
 							</div>
-							<div class="container mt-5">
+							<div class="container my-5">
 								<div class="owl-carousel owl-theme">
 									@foreach($materi as $data)
 									    <div class="item">
@@ -59,36 +59,47 @@
 								    @endforeach
 								</div>
 							</div>
-							<div class="mt-5">
-								<div class="d-flex">
-							        <h2 class="m-widget24__title ml-5 pl-4" style="font-size : 20px;">
-							    		Pembelajaran Untuk Kelas X
-									</h2>
-									<div class="ml-auto mr-5 pr-5">
-										<a class="m-link" href="{{ route('materi-kelasx') }}">
-											<h3 class="mt-5 pt-2" style="font-size : 16px;">
-									    		Lihat semua >
-											</h3>
-										</a>
-									</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="m-portlet mt-5">
+		<div class="m-portlet__body  m-portlet__body--no-padding">
+			<div class="row m-row--no-padding m-row--col-separator-xl">
+				<div class="col-md-12">
+					<div class="m-widget24">					 
+					    <div class="m-widget24__item">
+							<div class="d-flex">
+						        <h2 class="m-widget24__title ml-5 pl-4" style="font-size : 20px;">
+						    		Pembelajaran Untuk Kelas X
+								</h2>
+								<div class="ml-auto mr-5 pr-5">
+									<a class="m-link" href="{{ route('materi-kelasx') }}">
+										<h3 class="mt-5 pt-2" style="font-size : 16px;">
+								    		Lihat semua >
+										</h3>
+									</a>
 								</div>
-								<div class="container mt-3">
-									<div class="row">
-										@foreach($materi_x as $data)
-											<div class="col-md-4">
-										    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
-											    	<img src="{{ asset('images/materi/'. $data->thumbnail_image) }}" width="100%">
-											    	<div class="mt-3 ml-2">
-												    	<h5>{{ $data->judul_materi }}</h5>
-												        <p>Materi {{ $data->materi_mapel }} Kelas {{ $data->materi_kelas }}<br>{{ date('d F Y', strtotime($data->created_at)) }}</p>
-											    	</div>
-											    </a>
-											</div>
-										@endforeach
-									</div>
+							</div>
+							<div class="container my-3">
+								<div class="row">
+									@foreach($materi_x as $data)
+										<div class="col-md-4">
+									    	<a href="{{ route('materi-detail', $data->materi_url) }}" class="m-link a-black">
+										    	<img src="{{ asset('images/materi/'. $data->thumbnail_image) }}" width="100%">
+										    	<div class="mt-3 ml-2">
+											    	<h5>{{ $data->judul_materi }}</h5>
+											        <p>Materi {{ $data->materi_mapel }} Kelas {{ $data->materi_kelas }}<br>{{ date('d F Y', strtotime($data->created_at)) }}</p>
+										    	</div>
+										    </a>
+										</div>
+									@endforeach
 								</div>
 							</div>
 							<div class="mt-5">
+								<hr>
 								<div class="d-flex">
 							        <h2 class="m-widget24__title ml-5 pl-4" style="font-size : 20px;">
 							    		Pembelajaran Untuk Kelas XI
@@ -118,6 +129,7 @@
 								</div>
 							</div>
 							<div class="mt-5">
+								<hr>
 								<div class="d-flex">
 							        <h2 class="m-widget24__title ml-5 pl-4" style="font-size : 20px;">
 							    		Pembelajaran Untuk Kelas XII

@@ -26,8 +26,8 @@
     	<div class="m-portlet__head">
 			<div class="m-portlet__head-caption">
 				<div class="m-portlet__head-title">
-                    <h2 class="m-widget24__title" style="font-size : 20px;">
-                        <i class="flaticon-signs"></i> List Materi
+                    <h2 class="m-widget24__title" style="font-size : 17px;">
+                        <i class="flaticon-signs"></i> &nbsp;List Materi
 					</h2>
 				</div>
 			</div>
@@ -37,7 +37,7 @@
 				<div class="col-md-12">
 					<div class="m-widget24">					 
 					    <div class="m-widget24__item">
-							<ul class="nav nav-tabs mt-5" role="tablist">
+							<ul class="nav nav-tabs mt-5 mx-4" role="tablist">
 		                        <li class="nav-item">
 		                            <a class="nav-link {{ (Request::segment(2) == 'materi' && Request::segment(3) == '') ? 'active':'' }}" data-toggle="tab" href="#m_tabs_2_1">Materi Terpopuler</a>
 		                        </li>
@@ -57,10 +57,10 @@
 		                            <div class="mt-3">
 										<div class="d-flex">
 									        <h2 class="m-widget24__title ml-5 pl-4" style="font-size : 20px;">
-									    		List Materi Terpopuler
+									    		Materi Terpopuler
 											</h2>
 										</div>
-										<div class="container mt-3">
+										<div class="container mt-4">
 											<div class="row">
 												@foreach($populer as $data)
 													<div class="col-md-4">

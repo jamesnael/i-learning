@@ -41,7 +41,8 @@ class MateriController extends Controller
     {
         $materi = Materi::where('materi_url', $url)->firstOrFail();
         $materi->increment('view_count');
-        $populer = Materi::orderBy('view_count','DESC')->take(3)->get();
+        $populer = Materi::orderBy('view_count','DESC')->get()->except($materi->id);
+        $populer->take(4);
 
         return view('students.materi.detail', compact('materi', 'populer'))->with([
             'page'      => $this,

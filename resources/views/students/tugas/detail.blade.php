@@ -1,13 +1,20 @@
 @extends('students.template.master')
 @section('content')
+    <style type="text/css">
+        .file-button{
+            background-color: #fff !important;
+        }
+        .file-button:hover{
+            background-color: rgb(246 248 252) !important;
+        }
+    </style>
 	<div class="m-portlet ">
         <div class="m-portlet__head">
             <div class="m-portlet__head-caption">
                 <div class="m-portlet__head-title">
-                    <span class="m-portlet__head-icon">
-                        <i class="flaticon-file"></i>
-                    </span>
-                    <h1 class="m-portlet__head-text">Detail Tugas {{ $tugas->judul_tugas }}</h1>
+                    <h2 class="m-widget24__title" style="font-size : 17px;">
+                        <i class="flaticon-signs"></i> &nbsp;Detail Tugas {{ $tugas->judul_tugas }}
+                    </h2>
                 </div>
             </div>
         </div>
@@ -18,9 +25,9 @@
                     	<div class="col-md-8">
                             <h3>{{ $tugas->judul_tugas }}</h3>
                             <p>Tugas {{ $tugas->tugas_mapel }} Kelas {{ $tugas->tugas_kelas }}</p>
-                            <p>From : {{ $tugas->teacher->name }}</p>
+                            <h6 class="text-info mb-3">{{ $tugas->teacher->name }}</h6>
                             <p><i class="fa fa-calendar-alt"></i> {{ date('d F Y', strtotime($tugas->created_at)) }}</p>
-                            <p>Tenggat : {{ date('d F Y h:i:s', strtotime($tugas->deadline_tugas)) }}</p>
+                            <p><strong>Tenggat : {{ date('d F Y', strtotime($tugas->deadline_tugas)) }} Pukul {{ date('h:i:s', strtotime($tugas->deadline_tugas)) }}</strong></p>
                             <hr>
                             {!! $tugas->isi_tugas !!}
                             @if(!empty($tugas->file_tugas))
@@ -32,7 +39,7 @@
                     			<div class="card-title mx-4 my-3">
                     				<div class="d-flex">
 		                    			<h4>Tugas Anda</h4>
-                    					<div class="ml-auto">
+                    					<div class="ml-auto mt-1">
                     						<h6>{{ ($pengumpulan->status == '0') ? 'Ditugaskan':'Selesai' }}</h6>
                     					</div>
                     				</div>
@@ -42,11 +49,11 @@
 	                    				<form method="POST" action="{{ route('tugas-kirim') }}" enctype="multipart/form-data">
 	                    					{{ csrf_field() }}
 				                            <input type="hidden" name="id_tugas" value="{{ $tugas->id }}">
-		                    				<input type="file" class="btn btn-outline-primary btn-block" name="file_tugas" required="">
+		                    				<input type="file" class="btn btn-outline-primary btn-block file-button" name="file_tugas" required="" style="color: #5867dd !important;">
 		                    				<button type="submit" class="btn btn-primary btn-block mt-4">Tandai Sebagai Selesai</button>
 	                    				</form>
 	                    			@else
-	                    				<a class="btn btn-outline-primary btn-block" name="lihat" href="{{ asset('files/pengumpulan_tugas/'.$pengumpulan->file_tugas) }}" target="_blank">{{ $pengumpulan->file_tugas }}</a>
+	                    				<a class="btn btn-outline-primary btn-block file-button" name="lihat" href="{{ asset('files/pengumpulan_tugas/'.$pengumpulan->file_tugas) }}" target="_blank" style="color: #5867dd !important;">{{ $pengumpulan->file_tugas }}</a>
 	                    				<button type="submit" class="btn btn-primary btn-block mt-4" disabled="">Selesai</button>
 	                    			@endif
                     			</div>
@@ -74,7 +81,7 @@
     @php
         date_default_timezone_set('Asia/Jakarta');
     @endphp
-    @if($tugas->deadline_tugas <= date('Y-m-d h:i:s'))
+    @if($tugas->deadline_tugas <= date('Y-m-d h:i:s') && $pengumpulan->status == 0)
         <script type="text/javascript">
             $(window).on('load',function(){
                 $('#myModal').modal('show');

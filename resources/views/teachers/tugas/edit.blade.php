@@ -59,7 +59,7 @@
 					</div>
 					<div class="form-group m-form__group">
 						<label><strong class="text-danger">* </strong>Deadline Tugas</label>
-						<input type="text" class="form-control m-input" id="deadline_tugas" name="deadline_tugas" readonly="" placeholder="Select a date" value="{{ date('d F Y', strtotime($data->deadline_tugas)) }}">
+						<input type="text" class="form-control m-input" id="deadline_tugas" name="deadline_tugas" readonly="" placeholder="Select a date" value="{{ date('Y-m-d h:i', strtotime($data->deadline_tugas)) }}">
 					</div>
 					<div class="form-group m-form__group">
 						<label>File Tugas</label>
